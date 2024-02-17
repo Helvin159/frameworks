@@ -1,14 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import { Outlet, Route, Routes } from 'react-router';
+import Home from './routes/Home';
 
-function App() {
+const App = () => {
 	return (
-		<div className='App'>
-			<header className='App-header'>
-				<img src={logo} className='App-logo' alt='logo' />
-			</header>
-		</div>
+		<Routes element={<Outlet />}>
+			<Route path='/' element={<Home />}></Route>
+		</Routes>
 	);
-}
+};
 
 export default App;
