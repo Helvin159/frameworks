@@ -8,6 +8,8 @@ import Contact from './routes/Contact';
 import TrackOrder from './routes/TrackOrder';
 import Outlet from './routes/Outlet';
 
+import './css/style.css';
+
 const App = () => {
 	return (
 		<Routes>

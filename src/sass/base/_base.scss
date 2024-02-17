@@ -1,0 +1,13 @@
+* {
+	@include poppins-reg;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover {
+	text-decoration: underline;
+}

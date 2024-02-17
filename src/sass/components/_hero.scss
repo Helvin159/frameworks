@@ -1,0 +1,56 @@
+.hero {
+	color: white;
+
+	padding: 5.09rem 0;
+
+	&__banner {
+		margin: 0 auto;
+		position: relative;
+		text-align: center;
+		padding: 4.9rem 0;
+
+		&__content {
+			background-color: var(--main-bg-color);
+			max-width: 627px;
+			width: 100%;
+			margin: 0 auto;
+			border-radius: 27px;
+			padding: 3rem;
+
+			& h2 {
+				font-size: calc(1.2 * 2.3rem);
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				@include poppins-bold;
+				margin-bottom: 0.9rem;
+				line-height: 3.4rem;
+			}
+
+			&__text {
+				& p {
+					font-size: 1.25rem;
+				}
+				& button {
+					color: var(--main-bg-color);
+					background-color: #fff;
+					@include poppins-bold;
+					font-size: 1.2rem;
+					line-height: 2.26rem;
+					text-transform: uppercase;
+					padding: 0.55rem 2rem;
+					margin-top: 0.58rem;
+					border-radius: 10px;
+					letter-spacing: 1px;
+
+					& span {
+						display: none;
+					}
+
+					& span:hover {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}

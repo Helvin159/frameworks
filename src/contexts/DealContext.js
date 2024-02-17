@@ -9,7 +9,7 @@ export const DealContext = createContext({
 
 export const DealProvider = ({ children }) => {
 	const [isDeal, setIsDeal] = useState(true);
-	const [deal, setDeal] = useState('free worldwide shipping today');
+	const [deal, setDeal] = useState('free worldwide shipping today!');
 
 	const value = { isDeal, setIsDeal, deal, setDeal };
 
