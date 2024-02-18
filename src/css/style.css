@@ -2,7 +2,9 @@
 :root {
   --main-bg-color: #162d5d; }
 
-* {
+*,
+*:before,
+*:after {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -114,3 +116,66 @@ a:hover {
           display: none; }
         .hero__banner__content__text button span:hover {
           display: block; }
+
+.product-preview {
+  padding: 2.3rem 0; }
+  .product-preview__content {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 2.3rem;
+    align-items: flex-start; }
+    .product-preview__content__copy {
+      text-align: center;
+      padding: 0 3rem; }
+      .product-preview__content__copy__header {
+        text-align: left; }
+      .product-preview__content__copy__options {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: baseline;
+        position: relative; }
+        .product-preview__content__copy__options form {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: nowrap;
+          align-items: center;
+          justify-content: center;
+          width: 100%; }
+          .product-preview__content__copy__options form input {
+            width: 0;
+            opacity: 0;
+            height: 0;
+            cursor: pointer;
+            position: absolute; }
+          .product-preview__content__copy__options form input:checked + label {
+            background: rgba(22, 45, 93, 0.1);
+            border: solid 2px #162d5d; }
+          .product-preview__content__copy__options form input:checked + label:before {
+            border: solid 0.2rem white;
+            background: #162d5d;
+            box-shadow: 0 0 0 0.1rem #162d5d; }
+          .product-preview__content__copy__options form label {
+            padding: 1rem 1.75rem 1rem 4rem;
+            margin-bottom: 0.85rem;
+            cursor: pointer;
+            border-radius: 1rem;
+            background: rgba(var(--accent-color), 0.02);
+            border: solid 2px rgba(22, 45, 93, 0.3);
+            position: relative; }
+            .product-preview__content__copy__options form label h5,
+            .product-preview__content__copy__options form label h6,
+            .product-preview__content__copy__options form label p {
+              margin: 0;
+              padding: 0; }
+            .product-preview__content__copy__options form label:before {
+              content: '';
+              display: block;
+              width: 1.5rem;
+              height: 1.5rem;
+              position: absolute;
+              left: 2rem;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              border-radius: 50%;
+              border: solid 0.2rem rgba(22, 45, 93, 0.3); }

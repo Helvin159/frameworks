@@ -1,6 +1,6 @@
-import { Button } from 'bootstrap-4-react/lib/components';
-import { Container } from 'bootstrap-4-react/lib/components/layout';
 import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
 
 import heroImg from '../assets/img/s-l1600.webp';
 

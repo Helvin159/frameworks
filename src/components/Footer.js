@@ -1,5 +1,7 @@
-import { Col, Container, Row } from 'bootstrap-4-react/lib/components/layout';
 import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {

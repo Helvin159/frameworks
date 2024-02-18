@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from 'bootstrap-4-react/lib/components/layout';
+import Container from 'react-bootstrap/Container';
 import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
