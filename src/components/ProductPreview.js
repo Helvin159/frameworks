@@ -62,7 +62,7 @@ const ProductPreview = () => {
 										data-originalprice={i.original_price}
 										name='quantity'
 										id={`quantity${k}`}
-										value={1}
+										value={k}
 									/>
 									<label htmlFor={`quantity${k}`}>
 										<Row>
