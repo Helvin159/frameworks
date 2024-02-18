@@ -1,26 +1,34 @@
-import React, { Fragment, useRef, useState } from 'react';
+import React, { Fragment, useContext, useRef, useState } from 'react';
 import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Slider from './Slider';
+import { CartContext } from '../contexts/CartContext';
 
 const ProductPreview = () => {
 	const [selected, setSelected] = useState('93.99');
 	const [selectedOriginal, setSelectedOriginal] = useState('93.99');
+
+	const { inCart, setInCart } = useContext(CartContext);
+
 	const form = useRef();
 
 	const products = [
 		{
+			id: 1,
 			quantity: 1,
 			price: 93.99,
 			original_price: 188.0,
 		},
 		{
+			id: 2,
 			quantity: 2,
 			price: 169.18,
 			original_price: 376.0,
 		},
 		{
+			id: 3,
 			quantity: 3,
 			price: 239.67,
 			original_price: 564.0,
@@ -31,6 +39,26 @@ const ProductPreview = () => {
 		// console.log(form);
 		setSelected(e.target.dataset.price);
 		setSelectedOriginal(e.target.dataset.originalprice);
+	};
+
+	const handleAddCart = () => {
+		console.log(form);
+
+		let selected = [];
+
+		for (let i = 0; i < form.current.length; i++) {
+			if (form.current[i]?.checked === true) {
+				const newObj = {
+					id: form.current[i]?.dataset?.productid,
+					price: form.current[i]?.dataset.price,
+					original_price: form.current[i]?.dataset?.originalprice,
+				};
+
+				selected.push(newObj);
+			}
+		}
+		setInCart({ ...selected });
+		console.log(inCart, 'incart');
 	};
 
 	return (
@@ -62,11 +90,12 @@ const ProductPreview = () => {
 										type='radio'
 										data-price={i.price}
 										data-originalprice={i.original_price}
+										data-productid={i.id}
 										name='quantity'
-										id={`quantity${k}`}
+										id={`quantity${i.id}`}
 										value={k}
 									/>
-									<label htmlFor={`quantity${k}`}>
+									<label htmlFor={`quantity${i.id}`}>
 										<Row>
 											<Col>
 												<h5>Buy {i.quantity.toString()}</h5>
@@ -85,6 +114,7 @@ const ProductPreview = () => {
 									</label>
 								</Fragment>
 							))}
+							<Button onClick={handleAddCart}>Add to cart</Button>
 						</form>
 					</Container>
 				</Col>

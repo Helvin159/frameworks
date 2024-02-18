@@ -207,7 +207,8 @@ a:hover {
 
 .latest-reviews {
   max-width: 1250px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding: 4rem; }
   .latest-reviews__content__review {
     max-width: 236px;
     width: 100%;
