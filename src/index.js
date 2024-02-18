@@ -5,6 +5,7 @@ import App from './App';
 import { DealProvider } from './contexts/DealContext';
 import { CartProvider } from './contexts/CartContext';
 import { MenuProvider } from './contexts/MenuContext';
+import { ReviewProvider } from './contexts/ReviewModal';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,9 +13,11 @@ root.render(
 		<BrowserRouter>
 			<MenuProvider>
 				<DealProvider>
-					<CartProvider>
-						<App />
-					</CartProvider>
+					<ReviewProvider>
+						<CartProvider>
+							<App />
+						</CartProvider>
+					</ReviewProvider>
 				</DealProvider>
 			</MenuProvider>
 		</BrowserRouter>

@@ -46,7 +46,9 @@ const ProductPreview = () => {
 						</h1>
 						<p>
 							${selected} USD
-							<span>${Math.floor(selectedOriginal - selected)}.00</span>
+							<span>
+								${Math.round((selectedOriginal - selected) * 100) / 100}
+							</span>
 						</p>
 					</Container>
 					<Container fluid className='text-center py-3'>
@@ -55,7 +57,7 @@ const ProductPreview = () => {
 					<Container className='product-preview__content__copy__options'>
 						<form ref={form} onChange={handleChange}>
 							{products.map((i, k) => (
-								<Fragment>
+								<Fragment key={k}>
 									<input
 										type='radio'
 										data-price={i.price}
@@ -69,12 +71,13 @@ const ProductPreview = () => {
 											<Col>
 												<h5>Buy {i.quantity.toString()}</h5>
 												<p>
-													You save ${Math.floor(i.original_price - i.price)}.00
+													You save $
+													{Math.round((i.original_price - i.price) * 100) / 100}
 													USD
 												</p>
 											</Col>
 											<Col>
-												<h5>{i.price}</h5>
+												<h5>${i.price}</h5>
 												<h6>USD</h6>
 												<p>${i.original_price}.00 USD</p>
 											</Col>

@@ -1,9 +1,9 @@
 import { createContext, useState } from 'react';
 
 export const CartContext = createContext({
-	isCartOpen: null,
+	isCartOpen: Boolean,
 	setIsCartOpen: () => null,
-	inCart: [],
+	inCart: Array,
 	setInCart: () => null,
 });
 

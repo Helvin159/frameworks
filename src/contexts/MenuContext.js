@@ -1,7 +1,7 @@
 import { createContext, useState } from 'react';
 
 export const MenuContext = createContext({
-	isOpen: null,
+	isOpen: Boolean,
 	setIsOpen: () => null,
 });
 

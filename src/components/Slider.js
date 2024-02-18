@@ -12,27 +12,19 @@ const Slider = () => {
 		setIndex(selectedIndex);
 	};
 
-	const imgStyle = {
-		maxWidth: '634px',
-		width: '634px',
-		height: '634px',
-		objectFit: 'cover',
-		objectPosition: 'center',
-		borderRadius: '15px',
-	};
-
 	return (
 		<Fragment>
 			<Carousel
 				activeIndex={index}
 				onSelect={handleSelect}
 				indicators={false}
+				className='slider'
 				fade>
-				<Carousel.Item>
-					<img src={DefaultImg} alt='img' style={imgStyle} />
+				<Carousel.Item className='slider__item'>
+					<img src={DefaultImg} alt='img' />
 				</Carousel.Item>
-				<Carousel.Item>
-					<img src={DefaultImg2} alt='img' style={imgStyle} />
+				<Carousel.Item className='slider__item'>
+					<img src={DefaultImg2} alt='img' />
 				</Carousel.Item>
 			</Carousel>
 			<Container fluid></Container>
