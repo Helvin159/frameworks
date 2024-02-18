@@ -20,10 +20,6 @@ const LatestReviews = () => {
 		setCustomerReview,
 	} = useContext(ReviewContext);
 
-	const defaultCustomer = 'Mia';
-	const defaultReview =
-		'Very nice product that I have seen on Tiktok. Now I always film my baby and upload on it. Became the best decor in my bedroom. I ordered the second one 3 days ago, amazing no doubt.';
-
 	const handleClick = (e) => {
 		e.preventDefault();
 
