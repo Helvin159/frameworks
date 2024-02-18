@@ -41,23 +41,20 @@ const ProductPreview = () => {
 		setSelectedOriginal(e.target.dataset.originalprice);
 	};
 
-	const handleAddCart = () => {
-		console.log(form);
-
-		let selected = [];
-
+	const HandleAddCart = () => {
+		let newObj;
 		for (let i = 0; i < form.current.length; i++) {
 			if (form.current[i]?.checked === true) {
-				const newObj = {
-					id: form.current[i]?.dataset?.productid,
+				newObj = {
+					id: form.current[i]?.dataset?.id,
+					quantity: form.current[i].value,
 					price: form.current[i]?.dataset.price,
 					original_price: form.current[i]?.dataset?.originalprice,
+					image: '',
 				};
-
-				selected.push(newObj);
 			}
 		}
-		setInCart({ ...selected });
+		setInCart(newObj);
 		console.log(inCart, 'incart');
 	};
 
@@ -88,12 +85,13 @@ const ProductPreview = () => {
 								<Fragment key={k}>
 									<input
 										type='radio'
+										name='quantity'
+										data-id={i.id}
 										data-price={i.price}
 										data-originalprice={i.original_price}
-										data-productid={i.id}
-										name='quantity'
 										id={`quantity${i.id}`}
-										value={k}
+										value={k + 1}
+										defaultChecked={k === 0 ? true : false}
 									/>
 									<label htmlFor={`quantity${i.id}`}>
 										<Row>
@@ -114,7 +112,7 @@ const ProductPreview = () => {
 									</label>
 								</Fragment>
 							))}
-							<Button onClick={handleAddCart}>Add to cart</Button>
+							<Button onClick={HandleAddCart}>Add to cart</Button>
 						</form>
 					</Container>
 				</Col>

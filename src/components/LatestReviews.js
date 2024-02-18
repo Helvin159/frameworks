@@ -40,9 +40,31 @@ const LatestReviews = () => {
 	const reviews = [
 		{
 			customerName: 'Mia A',
+			image: 'https://randomuser.me/api/portraits/women/75.jpg',
 			customerReview:
 				'Very nice product that I have seen on Tiktok. Now I always film my baby and upload on it. Became the best decor in my bedroom. I ordered the second one 3 days ago, amazing no doubt.',
 			rating: 4.5,
+		},
+		{
+			customerName: 'Lydia Simmons',
+			image: 'https://randomuser.me/api/portraits/women/30.jpg',
+			customerReview:
+				'Very nice product that I have seen on Tiktok. Now I always film my baby and upload on it. Became the best decor in my bedroom. I ordered the second one 3 days ago, amazing no doubt.',
+			rating: 4.0,
+		},
+		{
+			customerName: 'Alan Davis',
+			image: 'https://randomuser.me/api/portraits/men/22.jpg',
+			customerReview:
+				'Very nice product that I have seen on Tiktok. Now I always film my baby and upload on it. Became the best decor in my bedroom. I ordered the second one 3 days ago, amazing no doubt.',
+			rating: 4.5,
+		},
+		{
+			customerName: 'Megan Owens',
+			image: 'https://randomuser.me/api/portraits/women/92.jpg',
+			customerReview:
+				'Very nice product that I have seen on Tiktok. Now I always film my baby and upload on it. Became the best decor in my bedroom. I ordered the second one 3 days ago, amazing no doubt.',
+			rating: 4.8,
 		},
 	];
 
@@ -55,18 +77,18 @@ const LatestReviews = () => {
 						data-customer={i.customerName}
 						data-review={i.customerReview}
 						onClick={handleClick}
-						md={4}
-						lg={4}
+						md={3}
+						lg={3}
 						key={k}>
 						<Container fluid className='latest-reviews__content__review__img'>
-							<img src={tempImg} alt='Temp' />
+							<img src={i.image} alt='Temp' />
 						</Container>
 						<Container className='latest-reviews__content__review__stars'>
 							<img src={starIcon} alt='Stars' />
 						</Container>
 						<Container fluid className='latest-reviews__content__review__copy'>
 							<span>{i.customerName}</span>
-							<p>{i.customerReview}</p>
+							<p>{i.customerReview.substring(0, 97)}...</p>
 						</Container>
 					</Col>
 				))}
