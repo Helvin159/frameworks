@@ -6,29 +6,31 @@ import Slider from './Slider';
 
 const ProductPreview = () => {
 	const [selected, setSelected] = useState('93.99');
+	const [selectedOriginal, setSelectedOriginal] = useState('93.99');
 	const form = useRef();
 
 	const products = [
 		{
 			quantity: 1,
 			price: 93.99,
-			originalPrice: 188.0,
+			original_price: 188.0,
 		},
 		{
 			quantity: 2,
 			price: 169.18,
-			originalPrice: 376.0,
+			original_price: 376.0,
 		},
 		{
 			quantity: 3,
 			price: 239.67,
-			originalPrice: 564.0,
+			original_price: 564.0,
 		},
 	];
 
 	const handleChange = (e) => {
 		// console.log(form);
 		setSelected(e.target.dataset.price);
+		setSelectedOriginal(e.target.dataset.originalprice);
 	};
 
 	return (
@@ -43,8 +45,12 @@ const ProductPreview = () => {
 							FrameWorks <br /> Digital Frame
 						</h1>
 						<p>
-							${selected} USD <span>discounted</span>
+							${selected} USD
+							<span>${Math.floor(selectedOriginal - selected)}.00</span>
 						</p>
+					</Container>
+					<Container fluid className='text-center py-3'>
+						Bundle & Save
 					</Container>
 					<Container className='product-preview__content__copy__options'>
 						<form ref={form} onChange={handleChange}>
@@ -53,6 +59,7 @@ const ProductPreview = () => {
 									<input
 										type='radio'
 										data-price={i.price}
+										data-originalprice={i.original_price}
 										name='quantity'
 										id={`quantity${k}`}
 										value={1}
@@ -62,14 +69,14 @@ const ProductPreview = () => {
 											<Col>
 												<h5>Buy {i.quantity.toString()}</h5>
 												<p>
-													You save ${Math.floor(i.originalPrice - i.price)}.00
+													You save ${Math.floor(i.original_price - i.price)}.00
 													USD
 												</p>
 											</Col>
 											<Col>
 												<h5>{i.price}</h5>
 												<h6>USD</h6>
-												<p>${i.originalPrice}.00 USD</p>
+												<p>${i.original_price}.00 USD</p>
 											</Col>
 										</Row>
 									</label>

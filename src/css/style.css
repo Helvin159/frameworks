@@ -131,6 +131,21 @@ a:hover {
       padding: 0 3rem; }
       .product-preview__content__copy__header {
         text-align: left; }
+        .product-preview__content__copy__header p {
+          font-family: 'Poppins', sans-serif;
+          font-weight: 700;
+          font-style: normal;
+          font-size: 1.3rem;
+          color: var(--main-bg-color); }
+          .product-preview__content__copy__header p span {
+            text-decoration: line-through;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            padding: 0 0.5rem;
+            letter-spacing: 3px;
+            font-size: 1.1rem;
+            color: #000000; }
       .product-preview__content__copy__options {
         display: flex;
         flex-direction: column;

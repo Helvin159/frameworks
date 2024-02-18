@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
 	return (
-		<Container fluid>
-			<Row>
+		<Container fluid className='footer'>
+			<Row className='footer__content'>
 				<Col xs={12} sm={12} md={6} lg={6}>
 					<h2>Our Store</h2>
 					<ul>

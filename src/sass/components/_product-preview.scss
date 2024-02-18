@@ -15,6 +15,20 @@
 			padding: 0 3rem;
 			&__header {
 				text-align: left;
+
+				& p {
+					@include poppins-bold;
+					font-size: 1.3rem;
+					color: var(--main-bg-color);
+					& span {
+						text-decoration: line-through;
+						@include poppins-bold;
+						padding: 0 0.5rem;
+						letter-spacing: 3px;
+						font-size: 1.1rem;
+						color: #000000;
+					}
+				}
 			}
 
 			&__options {
