@@ -7,8 +7,8 @@ import Slider from './Slider';
 import { CartContext } from '../contexts/CartContext';
 
 const ProductPreview = () => {
-	const [selected, setSelected] = useState('93.99');
-	const [selectedOriginal, setSelectedOriginal] = useState('93.99');
+	const [selected, setSelected] = useState(93.99);
+	const [selectedOriginal, setSelectedOriginal] = useState(188.0);
 
 	const { inCart, setInCart } = useContext(CartContext);
 
@@ -36,7 +36,6 @@ const ProductPreview = () => {
 	];
 
 	const handleChange = (e) => {
-		// console.log(form);
 		setSelected(e.target.dataset.price);
 		setSelectedOriginal(e.target.dataset.originalprice);
 	};
