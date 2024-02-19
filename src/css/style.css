@@ -113,7 +113,12 @@ a:hover {
         padding: 0.55rem 2rem;
         margin-top: 0.58rem;
         border-radius: 10px;
-        letter-spacing: 1px; }
+        letter-spacing: 1px;
+        border: transparent; }
+        .hero__banner__content__text button:hover, .hero__banner__content__text button:active {
+          background-color: #fff;
+          color: var(--main-bg-color);
+          border: transparent; }
         .hero__banner__content__text button span {
           display: none; }
         .hero__banner__content__text button span:hover {

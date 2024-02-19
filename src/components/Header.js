@@ -12,7 +12,11 @@ const Header = () => {
 	const cartBtnHandler = (e) => {
 		e.preventDefault();
 
-		setIsCartOpen(!isCartOpen);
+		if (isCartOpen === false) {
+			document.body.style.overflow = 'hidden';
+			setIsCartOpen(!isCartOpen);
+			return;
+		}
 	};
 
 	return (

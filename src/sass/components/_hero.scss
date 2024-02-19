@@ -41,6 +41,14 @@
 					margin-top: 0.58rem;
 					border-radius: 10px;
 					letter-spacing: 1px;
+					border: transparent;
+
+					&:hover,
+					&:active {
+						background-color: #fff;
+						color: var(--main-bg-color);
+						border: transparent;
+					}
 
 					& span {
 						display: none;

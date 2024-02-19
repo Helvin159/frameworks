@@ -14,7 +14,12 @@ const Cart = () => {
 
 	const handleClose = () => {
 		console.log('cart handler');
-		setIsCartOpen(!isCartOpen);
+
+		if (isCartOpen === true) {
+			document.body.style.overflow = 'auto';
+			setIsCartOpen(!isCartOpen);
+			return;
+		}
 	};
 
 	console.log(cart);
