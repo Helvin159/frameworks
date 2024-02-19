@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../contexts/CartContext';
 
 const Header = () => {
+	const { isCartOpen, setIsCartOpen } = useContext(CartContext);
+
 	const cartBtnHandler = (e) => {
-		console.log(e.target);
+		console.log('cart handler');
+		setIsCartOpen(!isCartOpen);
 	};
+
 	return (
 		<Container fluid className='header'>
 			<Row className='header__content'>

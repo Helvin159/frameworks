@@ -10,7 +10,7 @@ const ProductPreview = () => {
 	const [selected, setSelected] = useState(93.99);
 	const [selectedOriginal, setSelectedOriginal] = useState(188.0);
 
-	const { inCart, setInCart } = useContext(CartContext);
+	const { cart, setCart } = useContext(CartContext);
 
 	const form = useRef();
 
@@ -42,6 +42,7 @@ const ProductPreview = () => {
 
 	const HandleAddCart = () => {
 		let newObj;
+
 		for (let i = 0; i < form.current.length; i++) {
 			if (form.current[i]?.checked === true) {
 				newObj = {
@@ -51,10 +52,18 @@ const ProductPreview = () => {
 					original_price: form.current[i]?.dataset?.originalprice,
 					image: '',
 				};
+
+				if (cart === null) {
+					setCart([newObj]);
+					return;
+				}
+
+				if (cart !== null) {
+					setCart([...cart, newObj]);
+					return;
+				}
 			}
 		}
-		setInCart(newObj);
-		console.log(inCart, 'incart');
 	};
 
 	return (
@@ -88,11 +97,11 @@ const ProductPreview = () => {
 										data-id={i.id}
 										data-price={i.price}
 										data-originalprice={i.original_price}
-										id={`quantity${i.id}`}
+										id={`quantity${k}`}
 										value={k + 1}
 										defaultChecked={k === 0 ? true : false}
 									/>
-									<label htmlFor={`quantity${i.id}`}>
+									<label htmlFor={`quantity${k}`}>
 										<Row>
 											<Col>
 												<h5>Buy {i.quantity.toString()}</h5>

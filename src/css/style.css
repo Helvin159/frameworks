@@ -306,3 +306,17 @@ a:hover {
       opacity: 1;
       width: 100vw;
       height: 100vh; }
+
+.cart {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 20rem;
+  background-color: #fff;
+  transform: translateX(20%); }
+  .cart.show {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transform: translateX(0); }
