@@ -419,3 +419,22 @@ a:hover {
         background-color: transparent;
         border: none;
         outline: none; }
+
+.footer {
+  background-color: var(--main-bg-color);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-style: normal; }
+  .footer__content {
+    padding: 5rem;
+    justify-content: center;
+    align-items: baseline; }
+    .footer__content__links h2 {
+      font-size: 1.8rem; }
+    .footer__content__links ul {
+      padding: 0;
+      list-style-type: none; }
+      .footer__content__links ul li {
+        padding: 0 0.25rem;
+        margin: 1rem auto; }
