@@ -46,8 +46,8 @@ const Header = () => {
 							<li>
 								<Link to={'/contact'}>Contact</Link>
 							</li>
-							<li to={'/track-order'}>
-								<Link>Track Your Order</Link>
+							<li>
+								<Link to={'/track-order'}>Track Your Order</Link>
 							</li>
 						</ul>
 					</nav>

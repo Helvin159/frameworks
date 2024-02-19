@@ -18,13 +18,21 @@ a:hover {
   text-decoration: underline; }
 
 .header {
-  padding: 2.5rem 0;
-  max-width: 1250px;
-  margin: 0 auto; }
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 2; }
   .header__content {
+    padding: 2.5rem 0;
+    margin: 0 auto;
+    max-width: 1250px;
     justify-content: center;
     align-items: baseline;
-    max-width: 100%; }
+    max-width: 1250px;
+    width: 100%; }
     .header__content__nav {
       text-align: center; }
       .header__content__nav ul {
@@ -274,7 +282,7 @@ a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 3; }
+    z-index: 4; }
     .latest-reviews__modal__dialogue {
       position: absolute;
       top: 50%;
@@ -328,7 +336,7 @@ a:hover {
   width: 20rem;
   background-color: #fff;
   transform: translateX(20%);
-  z-index: 2; }
+  z-index: 3; }
   .cart.show {
     display: flex;
     flex-direction: column;
@@ -348,7 +356,7 @@ a:hover {
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.2s ease-in;
-  z-index: 2; }
+  z-index: 5; }
   .search.container-fluid {
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -470,3 +478,104 @@ a:hover {
       font-family: 'Poppins', sans-serif;
       font-weight: 700;
       font-style: normal; }
+
+.contact-form__form {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 1rem 3rem 2rem; }
+  .contact-form__form__group {
+    padding: 1rem 0 !important; }
+    .contact-form__form__group input {
+      width: 100%;
+      border-radius: 10px;
+      padding: 1rem;
+      border: 1px solid var(--main-bg-color);
+      font-size: 1.1rem; }
+    .contact-form__form__group textarea {
+      width: 100%;
+      min-height: 100px;
+      border-radius: 10px;
+      padding: 0.5rem;
+      border: 1px solid var(--main-bg-color);
+      font-size: 1.1rem;
+      resize: none; }
+    .contact-form__form__group__row {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap; }
+      .contact-form__form__group__row__input input {
+        width: 100%;
+        border-radius: 10px;
+        padding: 1rem;
+        border: 1px solid var(--main-bg-color);
+        font-size: 1.1rem; }
+  .contact-form__form button,
+  .contact-form__form .btn,
+  .contact-form__form .btn-primary {
+    width: 100% !important;
+    background-color: var(--main-bg-color);
+    border: transparent;
+    padding: 0.8rem 1rem;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-style: normal; }
+    .contact-form__form button:active, .contact-form__form button:focus,
+    .contact-form__form .btn:active,
+    .contact-form__form .btn:focus,
+    .contact-form__form .btn-primary:active,
+    .contact-form__form .btn-primary:focus {
+      border: transparent;
+      background-color: var(--main-bg-color); }
+
+.generic-hero {
+  padding: 3rem 4rem; }
+  .generic-hero__content {
+    max-width: 780px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem 4rem; }
+    .generic-hero__content h1 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-style: normal; }
+    .generic-hero__content p {
+      margin: 0 auto; }
+
+.track-order-form__content {
+  max-width: 992px;
+  margin: 0 auto 3rem;
+  padding: 2rem;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 25px;
+  padding: 5rem; }
+  .track-order-form__content__form-group {
+    margin: 0 auto;
+    text-align: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0; }
+    .track-order-form__content__form-group__form {
+      text-align: center; }
+      .track-order-form__content__form-group__form input {
+        padding: 1rem;
+        border-radius: 10px; }
+      .track-order-form__content__form-group__form button,
+      .track-order-form__content__form-group__form .btn,
+      .track-order-form__content__form-group__form .btn-primary {
+        background-color: var(--main-bg-color);
+        border: 1px solid var(--main-bg-color); }
+        .track-order-form__content__form-group__form button:focus, .track-order-form__content__form-group__form button:hover, .track-order-form__content__form-group__form button:active,
+        .track-order-form__content__form-group__form .btn:focus,
+        .track-order-form__content__form-group__form .btn:hover,
+        .track-order-form__content__form-group__form .btn:active,
+        .track-order-form__content__form-group__form .btn-primary:focus,
+        .track-order-form__content__form-group__form .btn-primary:hover,
+        .track-order-form__content__form-group__form .btn-primary:active {
+          border: transparent;
+          background-color: var(--main-bg-color); }
