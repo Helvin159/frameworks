@@ -41,7 +41,7 @@ const Header = () => {
 								<Link to={'/'}>Home</Link>
 							</li>
 							<li>
-								<Link to={'/products/product-collections'}>Snap Frame</Link>
+								<Link to={'/products/product-collections/1'}>Snap Frame</Link>
 							</li>
 							<li>
 								<Link to={'/contact'}>Contact</Link>
