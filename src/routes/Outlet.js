@@ -7,13 +7,18 @@ import DealNotification from '../components/DealNotification';
 import Cart from '../components/Cart/Cart';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { SearchContext } from '../contexts/SearchContext';
+import Search from '../components/Search';
 
 const Outlet = () => {
 	const { isDeal, deal } = useContext(DealContext);
 	const { isCartOpen } = useContext(CartContext);
+	const { isSearchOpen } = useContext(SearchContext);
+
 	return (
 		<Fragment>
 			{isDeal && <DealNotification deal={deal} />}
+			{isSearchOpen && <Search />}
 			{isCartOpen && <Cart />}
 			<Header />
 			<main>

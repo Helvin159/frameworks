@@ -58,6 +58,21 @@
 					}
 				}
 			}
+			&__btn {
+				cursor: pointer;
+
+				& img {
+					width: 22.5px;
+				}
+			}
+
+			&__search-btn {
+				cursor: pointer;
+
+				& img {
+					width: 22.5px;
+				}
+			}
 		}
 	}
 }

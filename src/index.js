@@ -6,19 +6,22 @@ import { DealProvider } from './contexts/DealContext';
 import { CartProvider } from './contexts/CartContext';
 import { MenuProvider } from './contexts/MenuContext';
 import { ReviewProvider } from './contexts/ReviewModal';
+import { SearchProvider } from './contexts/SearchContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
 		<BrowserRouter>
 			<MenuProvider>
-				<DealProvider>
-					<ReviewProvider>
-						<CartProvider>
-							<App />
-						</CartProvider>
-					</ReviewProvider>
-				</DealProvider>
+				<SearchProvider>
+					<DealProvider>
+						<ReviewProvider>
+							<CartProvider>
+								<App />
+							</CartProvider>
+						</ReviewProvider>
+					</DealProvider>
+				</SearchProvider>
 			</MenuProvider>
 		</BrowserRouter>
 	</React.StrictMode>

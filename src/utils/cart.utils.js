@@ -23,3 +23,33 @@ export const handleAddCart = ({ form, cart, setCart }) => {
 		}
 	}
 };
+
+export const filter = (arr, query, nameSetter, idSetter, priceSetter) => {
+	let filteredByName = arr.filter((el) =>
+		el.name.toLowerCase().includes(query.toLowerCase())
+	);
+
+	let filteredById = arr.filter((el) =>
+		el.id.toString().toLowerCase().includes(query.toString().toLowerCase())
+	);
+	let filteredByPrice = arr.filter((el) =>
+		el.price.toString().toLowerCase().includes(query.toString().toLowerCase())
+	);
+
+	nameSetter(filteredByName);
+	idSetter(filteredById);
+	priceSetter(filteredByPrice);
+	return filteredByName;
+};
+
+export const addKeyDownListener = ({ isSearchOpen, isSearchOpenSetter }) =>
+	document.addEventListener('keydown', (e) => {
+		console.log('run');
+		if (e.key === 'Escape') {
+			if (isSearchOpen === true) {
+				isSearchOpenSetter(!isSearchOpen);
+				document.body.style.overflow = 'auto';
+				return;
+			}
+		}
+	});

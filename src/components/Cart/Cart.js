@@ -13,7 +13,7 @@ const Cart = () => {
 	const navigate = useNavigate();
 
 	const handleClose = () => {
-		console.log('cart handler');
+		// console.log('cart handler');
 
 		if (isCartOpen === true) {
 			document.body.style.overflow = 'auto';
@@ -22,7 +22,7 @@ const Cart = () => {
 		}
 	};
 
-	console.log(cart);
+	// console.log(cart);
 
 	const navigateHome = () => navigate('/');
 

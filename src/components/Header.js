@@ -1,13 +1,17 @@
 import React, { useContext } from 'react';
+import { CartContext } from '../contexts/CartContext';
+import { SearchContext } from '../contexts/SearchContext';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
-import { CartContext } from '../contexts/CartContext';
+
+import cartIcon from '../assets/svg/icon-cart-shopping.svg';
+import searchIcon from '../assets/svg//icon-magnifying-glass.svg';
 
 const Header = () => {
 	const { isCartOpen, setIsCartOpen } = useContext(CartContext);
+	const { isSearchOpen, setIsSearchOpen } = useContext(SearchContext);
 
 	const cartBtnHandler = (e) => {
 		e.preventDefault();
@@ -16,6 +20,14 @@ const Header = () => {
 			document.body.style.overflow = 'hidden';
 			setIsCartOpen(!isCartOpen);
 			return;
+		}
+	};
+
+	const handleSearch = (e) => {
+		// console.log(e);
+		if (isSearchOpen === false) {
+			setIsSearchOpen(!isSearchOpen);
+			document.body.style.overflow = 'hidden';
 		}
 	};
 
@@ -45,11 +57,13 @@ const Header = () => {
 				</Col>
 				<Col md={4} className='header__content__cart'>
 					<ul>
-						<li>
-							<Button>Search</Button>
+						<li
+							onClick={handleSearch}
+							className='header__content__cart__search-btn'>
+							<img src={searchIcon} alt='Search Button' />
 						</li>
-						<li>
-							<Button onClick={cartBtnHandler}>Cart</Button>
+						<li onClick={cartBtnHandler} className='header__content__cart__btn'>
+							<img src={cartIcon} alt='Shopping cart Button' />
 						</li>
 					</ul>
 				</Col>

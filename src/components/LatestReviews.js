@@ -28,7 +28,7 @@ const LatestReviews = () => {
 		setCustomerReview(e.target.dataset.review);
 		document.body.style.overflow = 'hidden';
 
-		console.log(e);
+		// console.log(e);
 	};
 	const handleClose = () => {
 		setIsOpen(!isOpen);
