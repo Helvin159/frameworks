@@ -321,13 +321,14 @@ a:hover {
       height: 100vh; }
 
 .cart {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   width: 20rem;
   background-color: #fff;
-  transform: translateX(20%); }
+  transform: translateX(20%);
+  z-index: 2; }
   .cart.show {
     display: flex;
     flex-direction: column;
