@@ -439,3 +439,34 @@ a:hover {
       .footer__content__links ul li {
         padding: 0 0.25rem;
         margin: 1rem auto; }
+
+.description__content {
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  margin: 0 auto; }
+  .description__content.reverse {
+    flex-direction: row-reverse; }
+
+.all-reviews__content {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 1rem 4.51rem; }
+
+.site-wide-msg {
+  background-color: var(--main-bg-color);
+  color: white; }
+  .site-wide-msg__content {
+    max-width: 1250px;
+    margin: 0 auto;
+    text-align: center; }
+    .site-wide-msg__content p {
+      padding: 2rem;
+      width: 60%;
+      margin: 0 auto;
+      font-size: 2.5rem;
+      text-transform: capitalize;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-style: normal; }

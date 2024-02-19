@@ -1,0 +1,19 @@
+.site-wide-msg {
+	background-color: var(--main-bg-color);
+	color: white;
+
+	&__content {
+		max-width: 1250px;
+		margin: 0 auto;
+		text-align: center;
+
+		& p {
+			padding: 2rem;
+			width: 60%;
+			margin: 0 auto;
+			font-size: 2.5rem;
+			text-transform: capitalize;
+			@include poppins-bold;
+		}
+	}
+}

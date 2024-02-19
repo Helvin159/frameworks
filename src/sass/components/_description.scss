@@ -1,0 +1,12 @@
+.description {
+	&__content {
+		max-width: 1250px;
+		width: 100%;
+		margin: 0 auto;
+		padding: 1rem;
+		&.reverse {
+			flex-direction: row-reverse;
+		}
+		margin: 0 auto;
+	}
+}
