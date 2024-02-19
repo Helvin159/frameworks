@@ -10,7 +10,8 @@ const Header = () => {
 	const { isCartOpen, setIsCartOpen } = useContext(CartContext);
 
 	const cartBtnHandler = (e) => {
-		console.log('cart handler');
+		e.preventDefault();
+
 		setIsCartOpen(!isCartOpen);
 	};
 

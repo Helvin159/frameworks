@@ -17,21 +17,30 @@ const ProductPreview = () => {
 	const products = [
 		{
 			id: 1,
+			name: 'Frame Works Digital Frame',
 			quantity: 1,
 			price: 93.99,
 			original_price: 188.0,
+			image:
+				'https://firebasestorage.googleapis.com/v0/b/portfolio-db-b6a63.appspot.com/o/baby_1_5fcbadbd-bd6c-42a6-9d99-d7c4877be41e.webp?alt=media&token=454da158-b1ed-4cc0-af5d-148a09c214ce',
 		},
 		{
 			id: 2,
+			name: 'Frame Works Digital Frame',
 			quantity: 2,
 			price: 169.18,
 			original_price: 376.0,
+			image:
+				'https://firebasestorage.googleapis.com/v0/b/portfolio-db-b6a63.appspot.com/o/baby_1_5fcbadbd-bd6c-42a6-9d99-d7c4877be41e.webp?alt=media&token=454da158-b1ed-4cc0-af5d-148a09c214ce',
 		},
 		{
 			id: 3,
+			name: 'Frame Works Digital Frame',
 			quantity: 3,
 			price: 239.67,
 			original_price: 564.0,
+			image:
+				'https://firebasestorage.googleapis.com/v0/b/portfolio-db-b6a63.appspot.com/o/baby_1_5fcbadbd-bd6c-42a6-9d99-d7c4877be41e.webp?alt=media&token=454da158-b1ed-4cc0-af5d-148a09c214ce',
 		},
 	];
 
@@ -47,10 +56,11 @@ const ProductPreview = () => {
 			if (form.current[i]?.checked === true) {
 				newObj = {
 					id: form.current[i]?.dataset?.id,
+					name: form.current[i]?.dataset?.name,
 					quantity: form.current[i].value,
 					price: form.current[i]?.dataset.price,
 					original_price: form.current[i]?.dataset?.originalprice,
-					image: '',
+					image: form.current[i]?.dataset?.imgurl,
 				};
 
 				if (cart === null) {
@@ -96,7 +106,9 @@ const ProductPreview = () => {
 										name='quantity'
 										data-id={i.id}
 										data-price={i.price}
+										data-name={i.name}
 										data-originalprice={i.original_price}
+										data-imgurl={i.image}
 										id={`quantity${k}`}
 										value={k + 1}
 										defaultChecked={k === 0 ? true : false}

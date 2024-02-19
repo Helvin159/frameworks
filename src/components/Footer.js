@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
 	return (
 		<Container fluid className='footer'>
-			<Row className='footer__content'>
-				<Col xs={12} sm={12} md={6} lg={6}>
+			<Row className='footer__content p-5'>
+				<Col xs={12} sm={12} md={4} lg={4}>
 					<h2>Our Store</h2>
 					<ul>
 						<li>
@@ -22,7 +22,7 @@ const Footer = () => {
 						</li>
 					</ul>
 				</Col>
-				<Col xs={12} sm={12} md={6} lg={6}>
+				<Col xs={12} sm={12} md={4} lg={4}>
 					<h2>Policies</h2>
 					<ul>
 						<li>
