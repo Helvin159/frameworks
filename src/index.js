@@ -7,22 +7,27 @@ import { CartProvider } from './contexts/CartContext';
 import { MenuProvider } from './contexts/MenuContext';
 import { ReviewProvider } from './contexts/ReviewModal';
 import { SearchProvider } from './contexts/SearchContext';
+import { ProductsProvider } from './contexts/ProductContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
 		<BrowserRouter>
-			<MenuProvider>
-				<SearchProvider>
-					<DealProvider>
-						<ReviewProvider>
-							<CartProvider>
-								<App />
-							</CartProvider>
-						</ReviewProvider>
-					</DealProvider>
-				</SearchProvider>
-			</MenuProvider>
+			<ProductsProvider>
+				<ReviewProvider>
+					<MenuProvider>
+						<SearchProvider>
+							<DealProvider>
+								<ReviewProvider>
+									<CartProvider>
+										<App />
+									</CartProvider>
+								</ReviewProvider>
+							</DealProvider>
+						</SearchProvider>
+					</MenuProvider>
+				</ReviewProvider>
+			</ProductsProvider>
 		</BrowserRouter>
 	</React.StrictMode>
 );
