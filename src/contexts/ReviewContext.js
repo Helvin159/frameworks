@@ -20,7 +20,6 @@ export const ReviewProvider = ({ children }) => {
 		});
 		console.log(res, 'review ctx');
 		setReviews(res);
-		return;
 	};
 
 	useEffect(() => {

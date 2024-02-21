@@ -20,7 +20,6 @@ export const ProductsProvider = ({ children }) => {
 		});
 		console.log(res, 'product ctx');
 		setProducts(res);
-		return;
 	};
 
 	useEffect(() => {

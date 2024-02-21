@@ -5,9 +5,10 @@ import App from './App';
 import { DealProvider } from './contexts/DealContext';
 import { CartProvider } from './contexts/CartContext';
 import { MenuProvider } from './contexts/MenuContext';
-import { ReviewProvider } from './contexts/ReviewModal';
+import { ReviewModalProvider } from './contexts/ReviewModal';
 import { SearchProvider } from './contexts/SearchContext';
 import { ProductsProvider } from './contexts/ProductContext';
+import { ReviewProvider } from './contexts/ReviewContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,11 +19,11 @@ root.render(
 					<MenuProvider>
 						<SearchProvider>
 							<DealProvider>
-								<ReviewProvider>
+								<ReviewModalProvider>
 									<CartProvider>
 										<App />
 									</CartProvider>
-								</ReviewProvider>
+								</ReviewModalProvider>
 							</DealProvider>
 						</SearchProvider>
 					</MenuProvider>

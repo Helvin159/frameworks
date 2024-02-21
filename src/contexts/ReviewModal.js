@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react';
 
-export const ReviewContext = createContext({
+export const ReviewModalContext = createContext({
 	isOpen: null,
 	setIsOpen: () => Boolean,
 	customerName: null,
@@ -9,7 +9,7 @@ export const ReviewContext = createContext({
 	setCustomerReview: () => null,
 });
 
-export const ReviewProvider = ({ children }) => {
+export const ReviewModalProvider = ({ children }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [customerName, setCustomerName] = useState('Helvin');
 	const [customerReview, setCustomerReview] = useState('Helvin');
@@ -24,6 +24,8 @@ export const ReviewProvider = ({ children }) => {
 	};
 
 	return (
-		<ReviewContext.Provider value={value}>{children}</ReviewContext.Provider>
+		<ReviewModalContext.Provider value={value}>
+			{children}
+		</ReviewModalContext.Provider>
 	);
 };

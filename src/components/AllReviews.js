@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Col } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+import { ReviewContext } from '../contexts/ReviewContext';
 
 const AllReviews = () => {
+	const review = useContext(ReviewContext);
+	console.log(review, 'review');
 	const reviews = [
 		{
 			customerName: 'Mia A',

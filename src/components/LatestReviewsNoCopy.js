@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ReviewContext } from '../contexts/ReviewModal';
+import { ReviewModalContext } from '../contexts/ReviewModal';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -18,7 +18,7 @@ const LatestReviewsNoCopy = () => {
 		setCustomerName,
 		customerReview,
 		setCustomerReview,
-	} = useContext(ReviewContext);
+	} = useContext(ReviewModalContext);
 
 	const handleClick = (e) => {
 		e.preventDefault();
