@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { ReviewModalContext } from '../contexts/ReviewModal';
+import { ReviewContext } from '../contexts/ReviewContext';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -11,6 +12,7 @@ import timesIcon from '../assets/svg/icon-times.svg';
 import starIcon from '../assets/svg/icon-star.svg';
 
 const LatestReviews = () => {
+	const { reviews } = useContext(ReviewContext);
 	const {
 		isOpen,
 		setIsOpen,
@@ -35,58 +37,30 @@ const LatestReviews = () => {
 		document.body.style.overflow = 'auto';
 	};
 
-	const reviews = [
-		{
-			customerName: 'Mia A',
-			image: 'https://randomuser.me/api/portraits/women/75.jpg',
-			customerReview:
-				'Very nice product that I have seen on Tiktok. Now I always film my baby and upload on it. Became the best decor in my bedroom. I ordered the second one 3 days ago, amazing no doubt.',
-			rating: 4.5,
-		},
-		{
-			customerName: 'Lydia Simmons',
-			image: 'https://randomuser.me/api/portraits/women/30.jpg',
-			customerReview:
-				'Very nice product that I have seen on Tiktok. Now I always film my baby and upload on it. Became the best decor in my bedroom. I ordered the second one 3 days ago, amazing no doubt.',
-			rating: 4.0,
-		},
-		{
-			customerName: 'Alan Davis',
-			image: 'https://randomuser.me/api/portraits/men/22.jpg',
-			customerReview:
-				'Very nice product that I have seen on Tiktok. Now I always film my baby and upload on it. Became the best decor in my bedroom. I ordered the second one 3 days ago, amazing no doubt.',
-			rating: 4.5,
-		},
-		{
-			customerName: 'Megan Owens',
-			image: 'https://randomuser.me/api/portraits/women/92.jpg',
-			customerReview:
-				'Very nice product that I have seen on Tiktok. Now I always film my baby and upload on it. Became the best decor in my bedroom. I ordered the second one 3 days ago, amazing no doubt.',
-			rating: 4.8,
-		},
-	];
-
 	return (
 		<Container fluid className='latest-reviews'>
 			<Row className='latest-reviews__content'>
-				{reviews.map((i, k) => (
+				{reviews?.items.map((i, k) => (
 					<Col
 						className='latest-reviews__content__review'
-						data-customer={i.customerName}
-						data-review={i.customerReview}
+						data-customer={i.fields.customerName}
+						data-review={i.fields.customerComment}
 						onClick={handleClick}
 						md={3}
 						lg={3}
 						key={k}>
 						<Container fluid className='latest-reviews__content__review__img'>
-							<img src={i.image} alt='Temp' />
+							<img
+								src={`https:${i.fields.customerAvatar.fields.file.url}`}
+								alt={i.fields.customerName}
+							/>
 						</Container>
 						<Container className='latest-reviews__content__review__stars'>
 							<img src={starIcon} alt='Stars' />
 						</Container>
 						<Container fluid className='latest-reviews__content__review__copy'>
-							<span>{i.customerName}</span>
-							<p>{i.customerReview.substring(0, 97)}...</p>
+							<span>{i.fields.customerName}</span>
+							<p>{i.fields.customerComment.substring(0, 97)}...</p>
 						</Container>
 					</Col>
 				))}
