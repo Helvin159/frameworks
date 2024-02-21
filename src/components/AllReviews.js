@@ -14,12 +14,12 @@ const AllReviews = () => {
 					<Col xs={12} sm={4} md={3} key={k}>
 						<img
 							className='img-fluid'
-							src={`https:${i.fields.customerAvatar.fields.file.url}`}
-							alt={i.fields.customerName}
+							src={`https:${i?.fields.customerAvatar?.fields.file.url}`}
+							alt={i?.fields.customerName}
 						/>
-						<h4>{i.fields.customerName}</h4>
-						<p>{i.fields.customerComment}</p>
-						<p>{i.fields.rating}</p>
+						<h4>{i?.fields.customerName}</h4>
+						<p>{i?.fields.customerComment}</p>
+						<p>{i?.fields.rating}</p>
 					</Col>
 				))}
 			</Row>

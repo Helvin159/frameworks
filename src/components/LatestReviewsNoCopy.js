@@ -43,20 +43,20 @@ const LatestReviewsNoCopy = () => {
 				{reviews?.items.slice(0, 4).map((i, k) => (
 					<Col
 						className='latest-reviews__content__review'
-						data-customer={i.fields.customerName}
-						data-review={i.fields.customerComment}
+						data-customer={i?.fields.customerName}
+						data-review={i?.fields.customerComment}
 						onClick={handleClick}
 						md={3}
 						lg={3}
 						key={k}>
 						<Container fluid className='latest-reviews__content__review__img'>
 							<img
-								src={`https:${i.fields.customerAvatar.fields.file.url}`}
-								alt={i.fields.customerName}
+								src={`https:${i?.fields.customerAvatar?.fields.file.url}`}
+								alt={i?.fields.customerName}
 							/>
 						</Container>
 						<Container className='latest-reviews__content__review__stars'>
-							<p style={{ color: '#000' }}>{i.fields.customerName}</p>
+							<p style={{ color: '#000' }}>{i?.fields.customerName}</p>
 							<img src={starIcon} alt='Stars' />
 						</Container>
 					</Col>
