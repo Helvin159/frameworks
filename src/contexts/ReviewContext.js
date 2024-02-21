@@ -16,9 +16,9 @@ export const ReviewProvider = ({ children }) => {
 		});
 
 		const res = await client.getEntries({
-			content_type: 'reviews',
+			content_type: process.env.REACT_APP_CONTENTFUL_REVIEWS_CONTENT_TYPE,
 		});
-		console.log(res, 'review ctx');
+
 		setReviews(res);
 	};
 

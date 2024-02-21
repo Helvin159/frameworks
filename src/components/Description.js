@@ -7,10 +7,10 @@ const Description = ({ reversed, img, heading, copy }) => {
 	return (
 		<Container as='section' className='description' fluid>
 			<Row className={`description__content ${reversed ? 'reverse' : ''}`}>
-				<Col>
+				<Col className='description__content__col'>
 					<img src={img} alt={heading} />
 				</Col>
-				<Col>
+				<Col className='description__content__col'>
 					<h3>{heading}</h3>
 					<p>{copy}</p>
 				</Col>

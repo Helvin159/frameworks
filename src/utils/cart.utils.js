@@ -1,3 +1,5 @@
+import { createClient } from 'contentful';
+
 export const handleAddCart = ({ form, cart, setCart }) => {
 	let newObj;
 
@@ -53,3 +55,16 @@ export const addKeyDownListener = ({ isSearchOpen, isSearchOpenSetter }) =>
 			}
 		}
 	});
+
+export const getData = async (contentType, setter) => {
+	const client = createClient({
+		space: process.env.REACT_APP_CONTENTFUL_SPACE_ID,
+		accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_KEY,
+	});
+
+	const res = await client.getEntries({
+		content_type: contentType,
+	});
+	console.log(res, 'review ctx');
+	setter(res);
+};

@@ -22,7 +22,10 @@ const App = () => {
 					path='/products/product-collections'
 					element={<ProductCollections />}
 				/>
-				<Route path='/products/product-collections/:id' element={<Product />} />
+				<Route
+					path='/products/product-collections/:slug'
+					element={<Product />}
+				/>
 			</Route>
 		</Routes>
 	);

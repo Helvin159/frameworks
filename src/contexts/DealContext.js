@@ -2,8 +2,8 @@ import { createContext, useState } from 'react';
 
 export const DealContext = createContext({
 	isDeal: Boolean,
-	deal: null,
 	setIsDeal: () => null,
+	deal: null,
 	setDeal: () => null,
 });
 

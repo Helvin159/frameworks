@@ -18,7 +18,7 @@ a:hover {
   text-decoration: underline; }
 
 .header {
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 6px -6px rgba(0, 0, 0, 0.3);
   position: sticky;
   top: 0;
   left: 0;
@@ -454,6 +454,15 @@ a:hover {
   margin: 0 auto;
   padding: 1rem;
   margin: 0 auto; }
+  .description__content__col {
+    max-height: 667px; }
+    .description__content__col img {
+      width: 100%;
+      border-radius: 25px;
+      object-fit: cover;
+      object-position: center;
+      -o-object-fit: cover;
+      -o-object-position: center; }
   .description__content.reverse {
     flex-direction: row-reverse; }
 

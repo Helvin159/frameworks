@@ -27,8 +27,6 @@ const LatestReviewsNoCopy = () => {
 		setCustomerName(e.target.dataset.customer);
 		setCustomerReview(e.target.dataset.review);
 		document.body.style.overflow = 'hidden';
-
-		// console.log(e);
 	};
 	const handleClose = () => {
 		setIsOpen(!isOpen);

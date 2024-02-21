@@ -8,10 +8,12 @@ import { Link } from 'react-router-dom';
 
 import cartIcon from '../assets/svg/icon-cart-shopping.svg';
 import searchIcon from '../assets/svg//icon-magnifying-glass.svg';
+import { MenuContext } from '../contexts/MenuContext';
 
 const Header = () => {
 	const { isCartOpen, setIsCartOpen } = useContext(CartContext);
 	const { isSearchOpen, setIsSearchOpen } = useContext(SearchContext);
+	const { logoUrl } = useContext(MenuContext);
 
 	const cartBtnHandler = (e) => {
 		e.preventDefault();
@@ -24,7 +26,6 @@ const Header = () => {
 	};
 
 	const handleSearch = (e) => {
-		// console.log(e);
 		if (isSearchOpen === false) {
 			setIsSearchOpen(!isSearchOpen);
 			document.body.style.overflow = 'hidden';
@@ -41,7 +42,10 @@ const Header = () => {
 								<Link to={'/'}>Home</Link>
 							</li>
 							<li>
-								<Link to={'/products/product-collections/1'}>Snap Frame</Link>
+								<Link
+									to={'/products/product-collections/frameworks-digital-frame'}>
+									Frame Work
+								</Link>
 							</li>
 							<li>
 								<Link to={'/contact'}>Contact</Link>
@@ -53,7 +57,7 @@ const Header = () => {
 					</nav>
 				</Col>
 				<Col md={4} className='header__content__logo'>
-					Logo
+					<img src={logoUrl?.url} width={'250px'} alt='Logo' />
 				</Col>
 				<Col md={4} className='header__content__cart'>
 					<ul>

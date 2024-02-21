@@ -1,40 +1,35 @@
-import React, { Fragment } from 'react';
-import ProductPreview from '../components/ProductPreview';
+import React, { Fragment, useContext } from 'react';
+import { useParams } from 'react-router-dom';
+import { ProductContext } from '../contexts/ProductContext';
+import ProductPreview from '../components/ProductPreview/ProductPreview';
 import SiteWideMsg from '../components/SiteWideMsg';
 import Description from '../components/Description';
 import LatestReviewsNoCopy from '../components/LatestReviewsNoCopy';
 import AllReviews from '../components/AllReviews';
 
 const Product = () => {
-	const descriptionData = [
-		{
-			heading: 'PRESERVE THE PRECIOUS MOMENTS',
-			copy: "Feel the joy of becoming a parent with SnapFrame™. Preserve your baby's first moments —the heartbeat, tiny fingers, and the early glimpses. Each frame links to the miraculous journey of pregnancy.",
-			img: null,
-			reversed: false,
-		},
-		{
-			heading: 'THE PERFECT GIFT',
-			copy: 'Whether for baby showers, gender reveals, or just to say congrats, the SnapFrame™ stands as a symbol of enduring affection.',
-			img: null,
-			reversed: true,
-		},
-		{
-			heading: 'EFFORTLESS SETUP',
-			copy: 'Connect to any computer using the provided cable, drag, drop—Done! Easily swap or update video  by deleting the old and adding the new! Keep track of every special pregnancy moment, from the first ultrasound to the last month!',
-			img: '',
-			reversed: false,
-		},
-	];
+	const params = useParams();
+	const { products, productDescription } = useContext(ProductContext);
+
+	let product;
+
+	for (let i = 0; i < products?.items.length; i++) {
+		if (
+			products.items[i].fields.slug.toString().toLowerCase() ===
+			params.slug.toString().toLowerCase()
+		)
+			product = { ...products.items[i] };
+	}
+
 	return (
 		<Fragment>
-			<ProductPreview />
+			<ProductPreview product={product} />
 
-			{descriptionData.map((i, k) => (
+			{productDescription?.items?.map((i, k) => (
 				<Description
-					reversed={i.reversed}
-					img={i.img}
-					heading={i.heading}
+					reversed={k % 2 === 1 && true}
+					img={`https:${i.fields.featuredImage.fields.file.url}`}
+					heading={i.fields.title}
 					copy={i.copy}
 					key={k}
 				/>

@@ -1,16 +1,24 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext } from 'react';
 import Hero from '../components/Hero';
-import ProductPreview from '../components/ProductPreview';
+import ProductPreview from '../components/ProductPreview/ProductPreview';
 import LatestReviews from '../components/LatestReviews';
+import { ProductContext } from '../contexts/ProductContext';
+import Loading from '../components/Loading';
 
 const Home = () => {
-	return (
-		<Fragment>
-			<Hero />
-			<ProductPreview />
-			<LatestReviews />
-		</Fragment>
-	);
+	const { products } = useContext(ProductContext);
+
+	if (products) {
+		return (
+			<Fragment>
+				<Hero />
+				<ProductPreview product={products?.items[0]} />
+				<LatestReviews />
+			</Fragment>
+		);
+	} else {
+		return <Loading />;
+	}
 };
 
 export default Home;
