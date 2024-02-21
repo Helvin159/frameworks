@@ -51,7 +51,7 @@ const LatestReviews = () => {
 						key={k}>
 						<Container fluid className='latest-reviews__content__review__img'>
 							<img
-								src={`https:${i?.fields.customerAvatar.fields.file.url}`}
+								src={`https:${i?.fields.customerAvatar?.fields.file.url}`}
 								alt={i?.fields.customerName}
 							/>
 						</Container>
