@@ -18,7 +18,7 @@ export const ProductsProvider = ({ children }) => {
 		const res = await client.getEntries({
 			content_type: 'product',
 		});
-		console.log(res);
+		console.log(res, 'product ctx');
 		setProducts(res);
 		return;
 	};

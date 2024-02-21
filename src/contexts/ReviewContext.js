@@ -18,6 +18,7 @@ export const ReviewProvider = ({ children }) => {
 		const res = await client.getEntries({
 			content_type: 'reviews',
 		});
+		console.log(res, 'review ctx');
 		setReviews(res);
 		return;
 	};
