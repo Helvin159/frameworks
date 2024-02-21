@@ -6,6 +6,7 @@ import SiteWideMsg from '../components/SiteWideMsg';
 import Description from '../components/Description';
 import LatestReviewsNoCopy from '../components/LatestReviewsNoCopy';
 import AllReviews from '../components/AllReviews';
+import Loading from '../components/Loading';
 
 const Product = () => {
 	const params = useParams();
@@ -20,6 +21,8 @@ const Product = () => {
 		)
 			product = { ...products.items[i] };
 	}
+
+	if (!products) return <Loading />;
 
 	return (
 		<Fragment>
