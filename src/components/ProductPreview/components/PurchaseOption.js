@@ -3,6 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const PurchaseOption = ({ product, option, index }) => {
+	console.log(product, 'p');
 	return (
 		<Fragment key={index}>
 			<input
@@ -12,12 +13,12 @@ const PurchaseOption = ({ product, option, index }) => {
 				data-price={product?.fields.price}
 				data-name={product?.fields.title}
 				data-originalprice={product?.fields.originalPrice}
-				data-imgurl={`https:${product?.fields.file?.url}`}
-				id={`quantity=${option.quantity}-${product?.sys.id}`}
+				data-imgurl={`https:${product?.fields.featuredImage?.fields.file.url}`}
+				id={`quantity-${product?.sys.id}`}
 				value={1}
 				defaultChecked={option.fields.quantity === 1 ? true : false}
 			/>
-			<label htmlFor={`quantity=${option.fields.quantity}-${product?.sys.id}`}>
+			<label htmlFor={`quantity-${product?.sys.id}`}>
 				<Row>
 					<Col>
 						<h5>Buy {`${option.fields.quantity}`}</h5>
