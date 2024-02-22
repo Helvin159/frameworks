@@ -3,9 +3,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const PurchaseOption = ({ product, option, index }) => {
-	console.log(product, 'p');
+	console.log(option);
 	return (
-		<Fragment key={index}>
+		<Fragment>
 			<input
 				type='radio'
 				name='quantity'
@@ -14,11 +14,11 @@ const PurchaseOption = ({ product, option, index }) => {
 				data-name={product?.fields.title}
 				data-originalprice={product?.fields.originalPrice}
 				data-imgurl={`https:${product?.fields.featuredImage?.fields.file.url}`}
-				id={`quantity-${product?.sys.id}`}
+				id={`quantity-${option?.sys.id}`}
 				value={1}
 				defaultChecked={option.fields.quantity === 1 ? true : false}
 			/>
-			<label htmlFor={`quantity-${product?.sys.id}`}>
+			<label htmlFor={`quantity-${option?.sys.id}`}>
 				<Row>
 					<Col>
 						<h5>Buy {`${option.fields.quantity}`}</h5>
