@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { Fragment, useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
@@ -13,8 +13,6 @@ const Cart = () => {
 	const navigate = useNavigate();
 
 	const handleClose = () => {
-		// console.log('cart handler');
-
 		if (isCartOpen === true) {
 			document.body.style.overflow = 'auto';
 			setIsCartOpen(!isCartOpen);
@@ -22,17 +20,18 @@ const Cart = () => {
 		}
 	};
 
-	// console.log(cart);
-
-	const navigateHome = () => navigate('/');
+	const navigateHome = () => {
+		navigate('/');
+		setIsCartOpen(!isCartOpen);
+	};
 
 	return (
 		<Container fluid className={`cart ${cart ? 'show' : ''}`}>
-			<Row className='w-100'>
-				<Col sm={6}>
+			<Row className='cart__header'>
+				<Col sm={8} className='cart__header__heading'>
 					<h4>Your cart</h4>
 				</Col>
-				<Col sm={6}>
+				<Col sm={4} className='cart__header__close'>
 					<Button variant='outline-dark' onClick={handleClose}>
 						<img
 							src={timesIcon}
@@ -44,18 +43,32 @@ const Cart = () => {
 				</Col>
 			</Row>
 
-			{cart ? '' : <h1>Your cart is empty</h1>}
-			{cart?.map((i, k) => (
-				<CartItem
-					name={i.name}
-					img={i.image}
-					price={i.price}
-					currency={i.currency}
-					quantity={i.quantity}
-					key={k}
-				/>
-			))}
-			<button onClick={navigateHome}>Continue shopping</button>
+			{cart ? (
+				<Fragment>
+					<Container className='cart__items'>
+						{cart?.map((i, k) => (
+							<CartItem
+								name={i.name}
+								img={i.image}
+								price={i.price}
+								currency={i.currency}
+								quantity={i.quantity}
+								key={k}
+							/>
+						))}
+					</Container>
+					<Container className='cart__checkout-btn'>
+						<Button>Checkout</Button>
+					</Container>
+				</Fragment>
+			) : (
+				<Fragment>
+					<h3>Your cart is empty</h3>
+					<Container className='cart__continue-shopping'>
+						<Button onClick={navigateHome}>Continue shopping</Button>
+					</Container>
+				</Fragment>
+			)}
 		</Container>
 	);
 };

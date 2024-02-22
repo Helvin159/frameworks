@@ -3,15 +3,74 @@
 	top: 0;
 	right: 0;
 	bottom: 0;
-	width: 20rem;
+	padding: 0;
+	width: 30%;
+	box-sizing: border-box;
 	background-color: #fff;
-	transform: translateX(20%);
 	z-index: 3;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+	text-align: center;
+
+	&__header {
+		width: 100%;
+		margin: 0 auto;
+		padding: 1rem 0;
+		border-bottom: 1px solid var(--main-bg-color);
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		align-items: center;
+
+		&__heading {
+			padding: 0 1rem;
+			text-align: left;
+		}
+
+		&__close {
+			text-align: right;
+			padding: 0 1rem;
+
+			& button {
+				cursor: pointer;
+				border: none;
+				color: black;
+				&:active,
+				&:focus,
+				&:hover {
+					background-color: transparent;
+					outline: none;
+					border: none;
+				}
+			}
+		}
+	}
+
+	&__items {
+		margin: 0 auto;
+		padding: 1.5rem 0;
+		width: 100%;
+		border-bottom: 1px solid var(--main-bg-color);
+
+		& .cart-btn,
+		& .btn {
+			background-color: transparent;
+			color: black;
+			outline: none;
+			border: none;
+			font-size: 1.5rem;
+			&:active,
+			&:hover,
+			&:focus {
+				outline: none;
+				border: none;
+				background-color: transparent;
+			}
+		}
+	}
 
 	&.show {
 		display: flex;
 		flex-direction: column;
-		align-items: flex-start;
-		transform: translateX(0);
 	}
 }
