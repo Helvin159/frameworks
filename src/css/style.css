@@ -336,10 +336,13 @@ a:hover {
   padding: 0;
   width: 30%;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(5px);
   z-index: 3;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-  text-align: center; }
+  text-align: center;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out; }
   .cart__header {
     width: 100%;
     margin: 0 auto;
@@ -367,7 +370,7 @@ a:hover {
   .cart__items {
     margin: 0 auto;
     padding: 1.5rem 0;
-    width: 100%;
+    width: 90%;
     border-bottom: 1px solid var(--main-bg-color); }
     .cart__items .cart-btn,
     .cart__items .btn {
@@ -385,7 +388,8 @@ a:hover {
         background-color: transparent; }
   .cart.show {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    transform: translateX(0); }
 
 .search {
   position: fixed;

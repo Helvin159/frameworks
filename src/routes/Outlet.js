@@ -12,14 +12,14 @@ import Search from '../components/Search';
 
 const Outlet = () => {
 	const { isDeal, deal } = useContext(DealContext);
-	const { isCartOpen } = useContext(CartContext);
+
 	const { isSearchOpen } = useContext(SearchContext);
 
 	return (
 		<Fragment>
 			{isDeal && <DealNotification deal={deal} />}
 			{isSearchOpen && <Search />}
-			{isCartOpen && <Cart />}
+			<Cart />
 			<Header />
 			<main>
 				<Layout />

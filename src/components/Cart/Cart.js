@@ -26,7 +26,7 @@ const Cart = () => {
 	};
 
 	return (
-		<Container fluid className={`cart ${cart ? 'show' : ''}`}>
+		<Container fluid className={`cart ${isCartOpen ? 'show' : ''}`}>
 			<Row className='cart__header'>
 				<Col sm={8} className='cart__header__heading'>
 					<h4>Your cart</h4>
