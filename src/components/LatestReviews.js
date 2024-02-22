@@ -60,7 +60,7 @@ const LatestReviews = () => {
 						</Container>
 						<Container fluid className='latest-reviews__content__review__copy'>
 							<span>{i?.fields.customerName}</span>
-							<p>{i?.fields.customerComment.substring(0, 97)}...</p>
+							<p>{i?.fields.customerComment.substring(0, 93)}...</p>
 						</Container>
 					</Col>
 				))}
