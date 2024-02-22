@@ -51,6 +51,7 @@ const Cart = () => {
 					img={i.image}
 					price={i.price}
 					currency={i.currency}
+					quantity={i.quantity}
 					key={k}
 				/>
 			))}

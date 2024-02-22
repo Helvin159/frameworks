@@ -3,7 +3,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const PurchaseOption = ({ product, option, index }) => {
-	console.log(option);
 	return (
 		<Fragment>
 			<input
@@ -15,7 +14,7 @@ const PurchaseOption = ({ product, option, index }) => {
 				data-originalprice={product?.fields.originalPrice}
 				data-imgurl={`https:${product?.fields.featuredImage?.fields.file.url}`}
 				id={`quantity-${option?.sys.id}`}
-				value={1}
+				value={`${option?.fields.quantity}`}
 				defaultChecked={option.fields.quantity === 1 ? true : false}
 			/>
 			<label htmlFor={`quantity-${option?.sys.id}`}>

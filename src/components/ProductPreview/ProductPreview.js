@@ -45,7 +45,15 @@ const ProductPreview = ({ product }) => {
 				}
 
 				if (cart !== null) {
-					setCart([...cart, newObj]);
+					for (let i = 0; i < cart.length; i++) {
+						if (cart[i].id.toString() === newObj.id.toString()) {
+							newObj.quantity =
+								parseInt(newObj.quantity) + parseInt(cart[i].quantity);
+							setCart([newObj]);
+						} else {
+							setCart([...cart, newObj]);
+						}
+					}
 					return;
 				}
 			}
