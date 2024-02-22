@@ -2,7 +2,7 @@ import React, { Fragment, useContext } from 'react';
 import { Outlet as Layout } from 'react-router-dom';
 
 import { DealContext } from '../contexts/DealContext';
-import { CartContext } from '../contexts/CartContext';
+
 import DealNotification from '../components/DealNotification';
 import Cart from '../components/Cart/Cart';
 import Header from '../components/Header';
@@ -19,6 +19,7 @@ const Outlet = () => {
 		<Fragment>
 			{isDeal && <DealNotification deal={deal} />}
 			{isSearchOpen && <Search />}
+
 			<Cart />
 			<Header />
 			<main>

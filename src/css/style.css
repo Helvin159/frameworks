@@ -33,14 +33,42 @@ a:hover {
     align-items: baseline;
     max-width: 1250px;
     width: 100%; }
+    @media (max-width: 575.5px) {
+      .header__content {
+        padding: 0.25rem 0; } }
+    .header__content__mobile-menu-btn {
+      text-align: left;
+      display: none; }
+      @media (max-width: 768px) {
+        .header__content__mobile-menu-btn {
+          display: block; } }
+      @media (max-width: 575.5px) {
+        .header__content__mobile-menu-btn {
+          position: absolute;
+          left: 0;
+          top: 2rem; } }
+      .header__content__mobile-menu-btn .btn {
+        background-color: transparent;
+        border: none;
+        display: inline-block;
+        padding: 0;
+        margin: 0; }
+        .header__content__mobile-menu-btn .btn img {
+          width: 30px; }
     .header__content__nav {
       text-align: center; }
+      @media (max-width: 768px) {
+        .header__content__nav__desktop-nav {
+          display: none; } }
       .header__content__nav ul {
         list-style-type: none;
         padding: 0;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap; }
+        @media (max-width: 575.5px) {
+          .header__content__nav ul {
+            flex-direction: column; } }
         .header__content__nav ul li {
           padding: 0.5rem 0;
           margin: 0 0.3rem; }
@@ -52,6 +80,9 @@ a:hover {
       text-align: center; }
     .header__content__cart {
       text-align: right; }
+      @media (max-width: 575.5px) {
+        .header__content__cart {
+          display: none; } }
       .header__content__cart ul {
         list-style-type: none;
         padding: 0;
@@ -74,6 +105,34 @@ a:hover {
         cursor: pointer; }
         .header__content__cart__search-btn img {
           width: 22.5px; }
+
+.mobile-nav {
+  display: block;
+  transition: opacity 0.2s ease-in;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: black;
+  z-index: 4;
+  text-align: center;
+  transition: opacity 0.2s ease-in; }
+  .mobile-nav ul {
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    list-style-type: none;
+    color: white;
+    font-size: 2rem;
+    width: 80%; }
+  .mobile-nav.show {
+    visibility: visible;
+    opacity: 1; }
 
 .deal-notification {
   background-color: #162d5d;
@@ -343,6 +402,9 @@ a:hover {
   text-align: center;
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out; }
+  @media (max-width: 575.5px) {
+    .cart {
+      display: none; } }
   .cart__header {
     width: 100%;
     margin: 0 auto;
