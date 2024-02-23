@@ -30,7 +30,8 @@
 				& p {
 					font-size: 1.25rem;
 				}
-				& button {
+				& button,
+				&__shop-btn {
 					color: var(--main-bg-color);
 					background-color: #fff;
 					@include poppins-bold;
@@ -48,6 +49,18 @@
 						background-color: #fff;
 						color: var(--main-bg-color);
 						border: transparent;
+					}
+
+					&__shop-btn {
+						padding: 0.85rem 1rem;
+
+						&:hover,
+						&:active {
+							background-color: var(--main-bg-color);
+							color: #fff;
+							text-decoration: none;
+							border: transparent;
+						}
 					}
 
 					& span {

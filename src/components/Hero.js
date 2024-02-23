@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 
@@ -12,6 +13,9 @@ const style = {
 };
 
 const Hero = () => {
+	const navigate = useNavigate();
+
+	const handleNav = () => navigate('/products/product-collections');
 	return (
 		<Container fluid className='hero' style={{ ...style }}>
 			<Container className='hero__banner'>
@@ -19,7 +23,7 @@ const Hero = () => {
 					<h2>Connect. Upload. Enjoy</h2>
 					<Container fluid className='hero__banner__content__text'>
 						<p>The Best Digital Video Frame</p>
-						<Button>
+						<Button onClick={handleNav}>
 							Shop now <span>arrow animation</span>
 						</Button>
 					</Container>

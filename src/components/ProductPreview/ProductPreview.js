@@ -1,17 +1,25 @@
 import React, { useContext, useRef, useState } from 'react';
+
+// Context
 import { CartContext } from '../../contexts/CartContext';
 import { ProductContext } from '../../contexts/ProductContext';
+
+// Components
+import { Link } from 'react-router-dom';
 import PurchaseOption from './components/PurchaseOption';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Slider from '../Slider';
-import { Link } from 'react-router-dom';
+
+// Assets
+import rightArrowIcon from '../../assets/svg/icon-arrow-right-alt.svg';
 
 const ProductPreview = ({ product }) => {
 	const [selected, setSelected] = useState(93.99);
 	const [selectedOriginal, setSelectedOriginal] = useState(188.0);
+	const [showArrow, setShowArrow] = useState(false);
 
 	const { cart, setCart } = useContext(CartContext);
 	const { purchaseOptions } = useContext(ProductContext);
@@ -68,6 +76,10 @@ const ProductPreview = ({ product }) => {
 		return 0;
 	});
 
+	const handleShowArrow = () => {
+		setShowArrow(!showArrow);
+	};
+
 	return (
 		<Container fluid className='product-preview'>
 			<Row className='product-preview__content'>
@@ -104,13 +116,20 @@ const ProductPreview = ({ product }) => {
 								/>
 							))}
 
-							<Button onClick={HandleAddCart}>Add to cart</Button>
+							<Button className='add-to-cart' onClick={HandleAddCart}>
+								Add to cart
+							</Button>
 						</form>
 						{path === '/' && (
 							<Link
-								className='py-3'
+								className='py-3 view-more-link'
+								onMouseEnter={handleShowArrow}
+								onMouseOut={handleShowArrow}
 								to={`products/product-collections/${product?.fields.slug}`}>
-								View this product
+								View this product{' '}
+								<span className={`${showArrow ? 'show' : ''}`}>
+									<img src={rightArrowIcon} alt='Arrow' />
+								</span>
 							</Link>
 						)}
 					</Container>

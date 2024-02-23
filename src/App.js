@@ -9,6 +9,7 @@ import TrackOrder from './routes/TrackOrder';
 import Outlet from './routes/Outlet';
 
 import './css/style.css';
+import Checkout from './routes/Checkout';
 
 const App = () => {
 	return (
@@ -17,6 +18,7 @@ const App = () => {
 				<Route index element={<Home />} />
 				<Route path='/contact' element={<Contact />} />
 				<Route path='/track-order' element={<TrackOrder />} />
+				<Route path='/checkout' element={<Checkout />} />
 				<Route path='/products' element={<Products />} />
 				<Route
 					path='/products/product-collections'
