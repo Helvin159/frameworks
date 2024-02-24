@@ -411,8 +411,7 @@ a:hover {
         font-weight: 700;
         font-style: normal; }
       .latest-reviews__content__review:hover {
-        transform: translateY(-1rem);
-        z-index: 10; }
+        transform: translateY(-1rem); }
       .latest-reviews__content__review__img {
         margin: 0;
         padding: 0; }

@@ -8,7 +8,6 @@ const Card = ({ review, handleClick }) => {
 
 	for (let c = 0; c < review?.fields.rating; c++) {
 		ratingStars.push({ item: <img src={starIcon} alt='Star' /> });
-		console.log(ratingStars);
 	}
 	return (
 		<Container

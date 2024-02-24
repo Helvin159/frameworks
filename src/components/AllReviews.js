@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { Col } from 'react-bootstrap';
+import { ReviewContext } from '../contexts/ReviewContext';
+import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import { ReviewContext } from '../contexts/ReviewContext';
 
 import iconStar from '../assets/svg/icon-star.svg';
 
@@ -17,7 +17,6 @@ const AllReviews = () => {
 
 					for (let c = 0; c < i.fields.rating; c++) {
 						ratingStars.push({ item: <img src={iconStar} alt='Star' /> });
-						console.log(ratingStars);
 					}
 
 					return (
