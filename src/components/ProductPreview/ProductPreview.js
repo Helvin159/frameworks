@@ -88,9 +88,7 @@ const ProductPreview = ({ product }) => {
 				</Col>
 				<Col md={5} className='product-preview__content__copy'>
 					<Container className='product-preview__content__copy__header'>
-						<h1>
-							FrameWorks <br /> Digital Frame
-						</h1>
+						<h1>{product?.fields.title}</h1>
 						<p>
 							${Math.round(parseInt(selected, 10) * 100 + Number.EPSILON) / 100}{' '}
 							USD

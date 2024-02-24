@@ -12,6 +12,7 @@ import Button from 'react-bootstrap/Button';
 import cartIcon from '../assets/svg/icon-cart-shopping.svg';
 import searchIcon from '../assets/svg//icon-magnifying-glass.svg';
 import hamburger from '../assets/svg/icon-bars.svg';
+import timesIcon from '../assets/svg/icon-times.svg';
 
 const Header = () => {
 	const { isCartOpen, setIsCartOpen } = useContext(CartContext);
@@ -29,15 +30,20 @@ const Header = () => {
 		}
 	};
 
-	const handleSearch = (e) => {
+	const handleSearch = () => {
 		if (isSearchOpen === false) {
 			setIsSearchOpen(!isSearchOpen);
 			document.body.style.overflow = 'hidden';
 		}
 	};
 
-	const handleShow = (e) => {
+	const handleShow = () => {
 		setIsOpen(!isOpen);
+		document.body.style.overflow = 'hidden';
+	};
+	const handleClose = () => {
+		setIsOpen(!isOpen);
+		document.body.style.overflow = 'auto';
 	};
 
 	return (
@@ -92,6 +98,9 @@ const Header = () => {
 				</Row>
 			</Container>
 			<nav className={`mobile-nav ${isOpen ? 'show' : ''}`}>
+				<Button className='close-icon' onClick={handleClose}>
+					<img src={timesIcon} alt='Close buttn' />
+				</Button>
 				<ul>
 					<li>
 						<Link to={'/'}>Home</Link>
