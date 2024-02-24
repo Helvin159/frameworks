@@ -10,6 +10,7 @@ import tempImg from '../assets/img/IMG_8273.JPG';
 
 import timesIcon from '../assets/svg/icon-times.svg';
 import starIcon from '../assets/svg/icon-star.svg';
+import SwipeToSlide from './SwipeToSlide';
 
 const LatestReviews = () => {
 	const { reviews } = useContext(ReviewContext);
@@ -39,32 +40,9 @@ const LatestReviews = () => {
 
 	return (
 		<Container fluid className='latest-reviews'>
-			<Row className='latest-reviews__content'>
-				{reviews?.items.map((i, k) => (
-					<Col
-						className='latest-reviews__content__review'
-						data-customer={i?.fields.customerName}
-						data-review={i?.fields.customerComment}
-						onClick={handleClick}
-						md={3}
-						lg={3}
-						key={k}>
-						<Container fluid className='latest-reviews__content__review__img'>
-							<img
-								src={`https:${i?.fields.customerAvatar?.fields.file.url}`}
-								alt={i?.fields.customerName}
-							/>
-						</Container>
-						<Container className='latest-reviews__content__review__stars'>
-							<img src={starIcon} alt='Stars' />
-						</Container>
-						<Container fluid className='latest-reviews__content__review__copy'>
-							<span>{i?.fields.customerName}</span>
-							<p>{i?.fields.customerComment.substring(0, 93)}...</p>
-						</Container>
-					</Col>
-				))}
-			</Row>
+			<Container fluid className='latest-reviews__content'>
+				{reviews && <SwipeToSlide reviews={reviews?.items} />}
+			</Container>
 			<Container
 				fluid
 				className={`latest-reviews__modal ${isOpen ? 'show' : ''}`}>

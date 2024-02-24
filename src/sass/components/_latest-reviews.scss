@@ -1,12 +1,21 @@
 .latest-reviews {
 	max-width: 1250px;
 	margin: 0 auto;
-	padding: 4rem;
+	// padding: 5rem 0;
 
 	&__content {
-		justify-content: space-evenly;
-		align-items: baseline;
-		flex-wrap: wrap;
+		&.container-fluid {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		padding: 5rem 0;
+
+		&__slider {
+			padding: 0;
+			& .slick-track {
+				padding: 2rem 0;
+			}
+		}
 
 		&__review {
 			max-width: 236px;
@@ -23,6 +32,7 @@
 
 			&:hover {
 				transform: translateY(-1rem);
+				z-index: 10;
 			}
 			&__img {
 				margin: 0;
