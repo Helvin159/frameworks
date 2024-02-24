@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import { ReviewModalContext } from '../contexts/ReviewModal';
+import { ReviewModalContext } from '../../contexts/ReviewModal';
 import Container from 'react-bootstrap/Container';
 import Slider from 'react-slick';
+import Card from './components/Card';
+import CardNoCopy from './components/CardNoCopy';
 
-import starIcon from '../assets/svg/icon-star.svg';
-
-const SwipeToSlide = ({ reviews }) => {
+const SwipeToSlide = ({ reviews, withCopy }) => {
 	const { isOpen, setIsOpen, setCustomerName, setCustomerReview } =
 		useContext(ReviewModalContext);
 
@@ -47,6 +47,7 @@ const SwipeToSlide = ({ reviews }) => {
 					dots: true,
 					draggable: true,
 					centerMode: true,
+					arrows: false,
 				},
 			},
 		],
@@ -64,38 +65,32 @@ const SwipeToSlide = ({ reviews }) => {
 		setIsOpen(!isOpen);
 		document.body.style.overflow = 'hidden';
 	};
-	return (
-		<Container
-			fluid
-			className='slider-container latest-reviews__content__slider '>
-			<Slider {...settings}>
-				{reviews.map((i, k) => (
-					<Container
-						className='latest-reviews__content__review '
-						data-customer={i?.fields.customerName}
-						data-review={i?.fields.customerComment}
-						onClick={handleClick}
-						md={3}
-						lg={3}
-						key={k}>
-						<Container fluid className='latest-reviews__content__review__img'>
-							<img
-								src={`https:${i?.fields.customerAvatar?.fields.file.url}`}
-								alt={i?.fields.customerName}
-							/>
-						</Container>
-						<Container className='latest-reviews__content__review__stars'>
-							<img src={starIcon} alt='Stars' />
-						</Container>
-						<Container fluid className='latest-reviews__content__review__copy'>
-							<span>{i?.fields.customerName}</span>
-							<p>{i?.fields.customerComment.substring(0, 93)}...</p>
-						</Container>
-					</Container>
-				))}
-			</Slider>
-		</Container>
-	);
+	if (withCopy) {
+		return (
+			<Container
+				fluid
+				className='slider-container latest-reviews__content__slider '>
+				<Slider {...settings}>
+					{reviews.map((i, k) => (
+						<Card review={i} handleClick={handleClick} key={k} />
+					))}
+				</Slider>
+			</Container>
+		);
+	}
+	if (!withCopy) {
+		return (
+			<Container
+				fluid
+				className='slider-container latest-reviews__content__slider '>
+				<Slider {...settings}>
+					{reviews.map((i, k) => (
+						<CardNoCopy review={i} handleClick={handleClick} key={k} />
+					))}
+				</Slider>
+			</Container>
+		);
+	}
 };
 
 export default SwipeToSlide;

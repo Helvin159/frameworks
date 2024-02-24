@@ -103,18 +103,26 @@ const Header = () => {
 				</Button>
 				<ul>
 					<li>
-						<Link to={'/'}>Home</Link>
+						<Link onClick={handleClose} to={'/'}>
+							Home
+						</Link>
 					</li>
 					<li>
-						<Link to={'/products/product-collections/frameworks-digital-frame'}>
+						<Link
+							onClick={handleClose}
+							to={'/products/product-collections/frameworks-digital-frame'}>
 							Frame Work
 						</Link>
 					</li>
 					<li>
-						<Link to={'/contact'}>Contact</Link>
+						<Link onClick={handleClose} to={'/contact'}>
+							Contact
+						</Link>
 					</li>
 					<li>
-						<Link to={'/track-order'}>Track Your Order</Link>
+						<Link onClick={handleClose} to={'/track-order'}>
+							Track Your Order
+						</Link>
 					</li>
 				</ul>
 			</nav>

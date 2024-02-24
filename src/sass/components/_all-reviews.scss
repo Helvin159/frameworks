@@ -5,6 +5,10 @@
 		padding: 1rem 4.51rem;
 		text-align: center;
 
+		@media (max-width: 575.5px) {
+			padding: 1rem 3.25rem;
+		}
+
 		&__review {
 			padding: 0.5rem;
 

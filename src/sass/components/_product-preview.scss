@@ -6,12 +6,20 @@
 		padding: 0 2.3rem;
 		align-items: flex-start;
 
+		@media (max-width: 575.5px) {
+			padding: 0 2rem;
+		}
+
 		&__copy {
 			text-align: center;
 			padding: 0 3rem;
 
 			@media (max-width: 768px) {
 				padding-top: 2rem;
+			}
+
+			@media (max-width: 768px) {
+				padding: 2rem 0 0;
 			}
 			&__header {
 				text-align: left;
@@ -77,6 +85,11 @@
 						background: rgba(var(--accent-color), 0.02);
 						border: solid 2px rgba(22, 45, 93, 0.3);
 						position: relative;
+						text-align: left;
+
+						@media (max-width: 575.5px) {
+							width: 100%;
+						}
 
 						& h5,
 						h6,

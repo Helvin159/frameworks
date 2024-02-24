@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import SwipeToSlide from './SwipeToSlide';
+import SwipeToSlide from './SwipeToSlide/SwipeToSlide';
 
 import tempImg from '../assets/img/IMG_8273.JPG';
 import timesIcon from '../assets/svg/icon-times.svg';
@@ -31,7 +31,7 @@ const LatestReviews = () => {
 	return (
 		<Container fluid className='latest-reviews'>
 			<Container fluid className='latest-reviews__content'>
-				{reviews && <SwipeToSlide reviews={reviews?.items} />}
+				{reviews && <SwipeToSlide withCopy={true} reviews={reviews?.items} />}
 			</Container>
 			<Container
 				fluid

@@ -234,12 +234,18 @@ a:hover {
     margin: 0 auto;
     padding: 0 2.3rem;
     align-items: flex-start; }
+    @media (max-width: 575.5px) {
+      .product-preview__content {
+        padding: 0 2rem; } }
     .product-preview__content__copy {
       text-align: center;
       padding: 0 3rem; }
       @media (max-width: 768px) {
         .product-preview__content__copy {
           padding-top: 2rem; } }
+      @media (max-width: 768px) {
+        .product-preview__content__copy {
+          padding: 2rem 0 0; } }
       .product-preview__content__copy__header {
         text-align: left; }
         @media (max-width: 768px) {
@@ -293,7 +299,11 @@ a:hover {
             border-radius: 1rem;
             background: rgba(var(--accent-color), 0.02);
             border: solid 2px rgba(22, 45, 93, 0.3);
-            position: relative; }
+            position: relative;
+            text-align: left; }
+            @media (max-width: 575.5px) {
+              .product-preview__content__copy__options form label {
+                width: 100%; } }
             .product-preview__content__copy__options form label h5,
             .product-preview__content__copy__options form label h6,
             .product-preview__content__copy__options form label p {
@@ -425,6 +435,21 @@ a:hover {
         text-align: center;
         border-radius: 8px;
         background-color: #fff; }
+        .latest-reviews__content__review__stars__rating {
+          width: 100%; }
+          .latest-reviews__content__review__stars__rating.container-fluid {
+            padding-left: 0;
+            padding-right: 0; }
+          .latest-reviews__content__review__stars__rating img {
+            display: inline-block;
+            width: 25px;
+            margin: 0 0.3rem; }
+            .latest-reviews__content__review__stars__rating img:last-child {
+              margin-right: 0; }
+            .latest-reviews__content__review__stars__rating img:first-child {
+              margin-left: 0; }
+      .latest-reviews__content__review__copy {
+        padding: 0.5rem 1rem; }
   .latest-reviews__modal {
     background-color: rgba(0, 0, 0, 0.5);
     visibility: hidden;
@@ -677,6 +702,9 @@ a:hover {
   margin: 0 auto;
   padding: 1rem 4.51rem;
   text-align: center; }
+  @media (max-width: 575.5px) {
+    .all-reviews__content {
+      padding: 1rem 3.25rem; } }
   .all-reviews__content__review {
     padding: 0.5rem; }
     .all-reviews__content__review__card {
