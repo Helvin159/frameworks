@@ -779,10 +779,12 @@ a:hover {
       .contact-form__form__group__row.row {
         padding-left: 0;
         padding-right: 0;
-        justify-content: space-between; }
+        justify-content: space-between;
+        margin: 0 auto; }
       .contact-form__form__group__row.row* {
         padding-left: 0;
-        padding-right: 0; }
+        padding-right: 0;
+        margin: 0 auto; }
       .contact-form__form__group__row__input {
         padding: 0;
         display: flex; }
@@ -870,3 +872,16 @@ a:hover {
         .track-order-form__content__form-group__form .btn-primary:active {
           border: transparent;
           background-color: var(--main-bg-color); }
+
+.products__content {
+  border-radius: 10px;
+  padding: 0.5rem 2rem; }
+  @media (max-width: 575.5px) {
+    .products__content {
+      padding: 0.5rem 1rem; } }
+  .products__content__card__content {
+    border-radius: 10px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    padding: 2rem 2.5rem; }
+    .products__content__card__content img {
+      border-radius: 10px; }

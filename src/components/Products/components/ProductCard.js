@@ -18,17 +18,6 @@ const ProductCard = ({ product }) => {
 					className='img-fluid'
 				/>
 			</Container>
-
-			<style jsx>{`
-				.products__content__card__content {
-					border-radius: 10px;
-					box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-					padding: 2rem 2.5rem;
-				}
-				.products__content__card__content img {
-					border-radius: 10px;
-				}
-			`}</style>
 		</Col>
 	);
 };

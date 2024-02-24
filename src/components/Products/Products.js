@@ -14,16 +14,6 @@ const Products = () => {
 					<ProductCard product={i} key={k} />
 				))}
 			</Row>
-			<style jsx>{`
-				.products__content {
-					border-radius: 10px;
-					padding: 0.5rem 2rem;
-
-					@media (max-width: 575.5px) {
-						padding: 0.5rem 1rem;
-					}
-				}
-			`}</style>
 		</Container>
 	);
 };
