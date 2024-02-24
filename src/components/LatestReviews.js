@@ -5,12 +5,10 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import SwipeToSlide from './SwipeToSlide';
 
 import tempImg from '../assets/img/IMG_8273.JPG';
-
 import timesIcon from '../assets/svg/icon-times.svg';
-import starIcon from '../assets/svg/icon-star.svg';
-import SwipeToSlide from './SwipeToSlide';
 
 const LatestReviews = () => {
 	const { reviews } = useContext(ReviewContext);
@@ -23,14 +21,6 @@ const LatestReviews = () => {
 		setCustomerReview,
 	} = useContext(ReviewModalContext);
 
-	const handleClick = (e) => {
-		e.preventDefault();
-
-		setIsOpen(!isOpen);
-		setCustomerName(e.target.dataset.customer);
-		setCustomerReview(e.target.dataset.review);
-		document.body.style.overflow = 'hidden';
-	};
 	const handleClose = () => {
 		setIsOpen(!isOpen);
 		setCustomerName(null);

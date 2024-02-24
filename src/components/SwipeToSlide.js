@@ -6,14 +6,8 @@ import Slider from 'react-slick';
 import starIcon from '../assets/svg/icon-star.svg';
 
 const SwipeToSlide = ({ reviews }) => {
-	const {
-		isOpen,
-		setIsOpen,
-		customerName,
-		setCustomerName,
-		customerReview,
-		setCustomerReview,
-	} = useContext(ReviewModalContext);
+	const { isOpen, setIsOpen, setCustomerName, setCustomerReview } =
+		useContext(ReviewModalContext);
 
 	const settings = {
 		className: 'center',
