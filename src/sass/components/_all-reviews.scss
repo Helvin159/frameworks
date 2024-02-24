@@ -35,6 +35,20 @@
 
 				& .rating {
 					padding: 1rem 0 0;
+					text-align: center;
+
+					& img {
+						width: 30px;
+						margin: 0 0.3rem;
+
+						&:last-child {
+							margin-right: 0;
+						}
+
+						&:first-child {
+							margin-left: 0;
+						}
+					}
 				}
 			}
 		}

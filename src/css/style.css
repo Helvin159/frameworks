@@ -692,7 +692,15 @@ a:hover {
         padding: 1.025rem 1.025rem 0.025rem;
         box-shadow: 0 5px 6px -6px rgba(0, 0, 0, 0.4); }
       .all-reviews__content__review__card .rating {
-        padding: 1rem 0 0; }
+        padding: 1rem 0 0;
+        text-align: center; }
+        .all-reviews__content__review__card .rating img {
+          width: 30px;
+          margin: 0 0.3rem; }
+          .all-reviews__content__review__card .rating img:last-child {
+            margin-right: 0; }
+          .all-reviews__content__review__card .rating img:first-child {
+            margin-left: 0; }
 
 .site-wide-msg {
   background-color: var(--main-bg-color);
