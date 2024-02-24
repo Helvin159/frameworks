@@ -776,12 +776,31 @@ a:hover {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap; }
-      .contact-form__form__group__row__input input {
-        width: 100%;
-        border-radius: 10px;
-        padding: 1rem;
-        border: 1px solid var(--main-bg-color);
-        font-size: 1.1rem; }
+      .contact-form__form__group__row.row {
+        padding-left: 0;
+        padding-right: 0;
+        justify-content: space-between; }
+      .contact-form__form__group__row.row* {
+        padding-left: 0;
+        padding-right: 0; }
+      .contact-form__form__group__row__input {
+        padding: 0;
+        display: flex; }
+        .contact-form__form__group__row__input:last-child {
+          justify-content: flex-end;
+          text-align: right; }
+        .contact-form__form__group__row__input input {
+          display: block;
+          width: 97%;
+          border-radius: 10px;
+          padding: 1rem;
+          border: 1px solid var(--main-bg-color);
+          font-size: 1.1rem; }
+          @media (max-width: 575.5px) {
+            .contact-form__form__group__row__input input {
+              width: 100%; }
+              .contact-form__form__group__row__input input:last-child {
+                margin-top: 1rem; } }
   .contact-form__form button,
   .contact-form__form .btn,
   .contact-form__form .btn-primary {

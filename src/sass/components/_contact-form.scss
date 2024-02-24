@@ -29,13 +29,39 @@
 				flex-direction: row;
 				flex-wrap: wrap;
 
+				&.row {
+					padding-left: 0;
+					padding-right: 0;
+					justify-content: space-between;
+				}
+
+				&.row* {
+					padding-left: 0;
+					padding-right: 0;
+				}
+
 				&__input {
+					padding: 0;
+					display: flex;
+					&:last-child {
+						justify-content: flex-end;
+						text-align: right;
+					}
 					& input {
-						width: 100%;
+						display: block;
+						width: 97%;
 						border-radius: 10px;
 						padding: 1rem;
 						border: 1px solid var(--main-bg-color);
 						font-size: 1.1rem;
+
+						@media (max-width: 575.5px) {
+							width: 100%;
+
+							&:last-child {
+								margin-top: 1rem;
+							}
+						}
 					}
 				}
 			}
