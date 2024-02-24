@@ -16,7 +16,13 @@ const AllReviews = () => {
 					let ratingStars = [];
 
 					for (let c = 0; c < i.fields.rating; c++) {
-						ratingStars.push({ item: <img src={iconStar} alt='Star' /> });
+						let index = `${c}-${
+							Math.floor(Math.random() * (Math.floor(10) - Math.ceil(3) + 1)) +
+							Math.ceil(3)
+						}`;
+						ratingStars.push({
+							item: <img src={iconStar} alt='Star' key={index} />,
+						});
 					}
 
 					return (

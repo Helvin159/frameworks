@@ -35,7 +35,7 @@ const SwipeToSlide = ({ reviews, withCopy }) => {
 					infinite: true,
 					draggable: true,
 					dots: false,
-					centerMode: true,
+					centerMode: 1,
 				},
 			},
 			{
@@ -46,7 +46,7 @@ const SwipeToSlide = ({ reviews, withCopy }) => {
 					infinite: true,
 					dots: true,
 					draggable: true,
-					centerMode: true,
+					centerMode: 1,
 					arrows: false,
 				},
 			},
