@@ -65,32 +65,22 @@ const SwipeToSlide = ({ reviews, withCopy }) => {
 		setIsOpen(!isOpen);
 		document.body.style.overflow = 'hidden';
 	};
-	if (withCopy) {
-		return (
-			<Container
-				fluid
-				className='slider-container latest-reviews__content__slider '>
-				<Slider {...settings}>
-					{reviews.map((i, k) => (
-						<Card review={i} handleClick={handleClick} key={k} />
-					))}
-				</Slider>
-			</Container>
-		);
-	}
-	if (!withCopy) {
-		return (
-			<Container
-				fluid
-				className='slider-container latest-reviews__content__slider '>
-				<Slider {...settings}>
-					{reviews.map((i, k) => (
-						<CardNoCopy review={i} handleClick={handleClick} key={k} />
-					))}
-				</Slider>
-			</Container>
-		);
-	}
+
+	return (
+		<Container
+			fluid
+			className='slider-container latest-reviews__content__slider '>
+			<Slider {...settings}>
+				{withCopy
+					? reviews.map((i, k) => (
+							<Card review={i} handleClick={handleClick} key={k} />
+					  ))
+					: reviews.map((i, k) => (
+							<CardNoCopy review={i} handleClick={handleClick} key={k} />
+					  ))}
+			</Slider>
+		</Container>
+	);
 };
 
 export default SwipeToSlide;
