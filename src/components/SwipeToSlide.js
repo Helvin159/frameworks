@@ -33,7 +33,9 @@ const SwipeToSlide = ({ reviews }) => {
 					slidesToShow: 2,
 					slidesToScroll: 2,
 					infinite: true,
+					draggable: true,
 					dots: false,
+					centerMode: true,
 				},
 			},
 			{
@@ -43,6 +45,7 @@ const SwipeToSlide = ({ reviews }) => {
 					slidesToScroll: 1,
 					infinite: true,
 					dots: true,
+					draggable: true,
 					centerMode: true,
 				},
 			},
