@@ -62,11 +62,8 @@ const Header = () => {
 									<Link to={'/'}>Home</Link>
 								</li>
 								<li>
-									<Link
-										to={
-											'/products/product-collections/frameworks-digital-frame'
-										}>
-										Frame Work
+									<Link to={'/product-collections/frameworks-digital-frame'}>
+										FrameWork
 									</Link>
 								</li>
 								<li>
@@ -110,8 +107,8 @@ const Header = () => {
 					<li>
 						<Link
 							onClick={handleClose}
-							to={'/products/product-collections/frameworks-digital-frame'}>
-							Frame Work
+							to={'/product-collections/frameworks-digital-frame'}>
+							FrameWork
 						</Link>
 					</li>
 					<li>

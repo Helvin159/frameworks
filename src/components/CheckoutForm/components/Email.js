@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import Container from 'react-bootstrap/Container';
 
 const Email = () => {
-	const emailForm = useRef;
+	const emailForm = useRef();
 	return (
 		<Container fluid>
 			<h3>Email</h3>

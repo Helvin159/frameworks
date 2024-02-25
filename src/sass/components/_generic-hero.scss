@@ -1,11 +1,22 @@
 .generic-hero {
 	padding: 3rem 4rem;
+
+	@media (max-width: 768px) {
+		padding: 2rem;
+	}
+	@media (max-width: 575.5px) {
+		padding: 2rem 1 0;
+	}
 	&__content {
 		max-width: 780px;
 		width: 100%;
 		margin: 0 auto;
 		text-align: center;
 		padding: 2rem 4rem;
+
+		@media (max-width: 575.5px) {
+			padding: 0;
+		}
 
 		& h1 {
 			@include poppins-bold;

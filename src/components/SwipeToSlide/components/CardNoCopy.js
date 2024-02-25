@@ -11,25 +11,58 @@ const CardNoCopy = ({ review, handleClick }) => {
 			Math.floor(Math.random() * (Math.floor(10) - Math.ceil(3) + 1)) +
 			Math.ceil(3)
 		}`;
-		ratingStars.push({ item: <img src={starIcon} alt='Star' key={index} /> });
+		ratingStars.push({
+			item: (
+				<img
+					src={starIcon}
+					data-customer={review?.fields.customerName}
+					data-review={review?.fields.customerComment}
+					data-rating={review?.fields.rating}
+					alt='Star'
+					key={index}
+				/>
+			),
+		});
 	}
 	return (
 		<Container
 			className='latest-reviews__content__review'
 			data-customer={review?.fields.customerName}
 			data-review={review?.fields.customerComment}
+			data-rating={review?.fields.rating}
 			onClick={handleClick}
 			md={3}
 			lg={3}>
-			<Container fluid className='latest-reviews__content__review__img'>
+			<Container
+				data-customer={review?.fields.customerName}
+				data-review={review?.fields.customerComment}
+				data-rating={review?.fields.rating}
+				fluid
+				className='latest-reviews__content__review__img'>
 				<img
+					data-customer={review?.fields.customerName}
+					data-review={review?.fields.customerComment}
+					data-rating={review?.fields.rating}
 					src={`https:${review?.fields.customerAvatar?.fields.file.url}`}
 					alt={review?.fields.customerName}
 				/>
 			</Container>
-			<Container className='latest-reviews__content__review__stars'>
-				<p style={{ color: '#000' }}>{review?.fields.customerName}</p>
+			<Container
+				data-customer={review?.fields.customerName}
+				data-review={review?.fields.customerComment}
+				data-rating={review?.fields.rating}
+				className='latest-reviews__content__review__stars'>
+				<p
+					data-customer={review?.fields.customerName}
+					data-review={review?.fields.customerComment}
+					data-rating={review?.fields.rating}
+					style={{ color: '#000' }}>
+					{review?.fields.customerName}
+				</p>
 				<Container
+					data-customer={review?.fields.customerName}
+					data-review={review?.fields.customerComment}
+					data-rating={review?.fields.rating}
 					fluid
 					className='latest-reviews__content__review__stars__rating'>
 					{ratingStars.map((i) => i.item)}

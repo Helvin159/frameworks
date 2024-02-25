@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Outlet from './routes/Outlet';
 import Home from './routes/Home';
-import Products from './routes/Products';
 import ProductCollections from './routes/ProductCollections';
 import Product from './routes/Product';
 import Contact from './routes/Contact';
@@ -24,15 +23,9 @@ const App = () => {
 				<Route path='/contact' element={<Contact />} />
 				<Route path='/track-order' element={<TrackOrder />} />
 				<Route path='/checkout' element={<Checkout />} />
-				<Route path='/products' element={<Products />} />
-				<Route
-					path='/products/product-collections'
-					element={<ProductCollections />}
-				/>
-				<Route
-					path='/products/product-collections/:slug'
-					element={<Product />}
-				/>
+				<Route path='/cart' element={<Checkout />} />
+				<Route path='/product-collections' element={<ProductCollections />} />
+				<Route path='/product-collections/:slug' element={<Product />} />
 			</Route>
 		</Routes>
 	);

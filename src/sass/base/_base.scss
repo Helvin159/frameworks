@@ -11,5 +11,10 @@ a {
 }
 
 a:hover {
-	text-decoration: underline;
+	text-decoration: none;
+}
+
+button,
+.btn {
+	@include poppins-med;
 }

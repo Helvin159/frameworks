@@ -144,16 +144,35 @@
 					@include poppins-med;
 
 					& span {
-						opacity: 0;
-						transition: opacity 0.1s ease-in;
+						overflow: hidden;
 						& img {
-							width: 35px;
+							visibility: hidden;
+							display: inline-block;
+							transform: translateX(-25px);
+							width: 0;
+							height: 35px;
 							color: var(--main-bg-color);
 						}
 
 						&.show {
-							opacity: 1;
-							width: auto;
+							& img {
+								animation: left-to-right 0.3s 1 normal ease-in;
+								animation-fill-mode: forwards;
+							}
+
+							@keyframes left-to-right {
+								0% {
+								}
+								20% {
+									visibility: visible;
+								}
+								to {
+									visibility: visible;
+									opacity: 1;
+									transform: translateX(0);
+									width: 30px;
+								}
+							}
 						}
 					}
 				}

@@ -6,8 +6,13 @@ import Card from './components/Card';
 import CardNoCopy from './components/CardNoCopy';
 
 const SwipeToSlide = ({ reviews, withCopy }) => {
-	const { isOpen, setIsOpen, setCustomerName, setCustomerReview } =
-		useContext(ReviewModalContext);
+	const {
+		isOpen,
+		setIsOpen,
+		setCustomerName,
+		setCustomerReview,
+		setCustomerRating,
+	} = useContext(ReviewModalContext);
 
 	const settings = {
 		className: 'center',
@@ -61,6 +66,7 @@ const SwipeToSlide = ({ reviews, withCopy }) => {
 
 		setCustomerName(e.target.dataset.customer);
 		setCustomerReview(e.target.dataset.review);
+		setCustomerRating(e.target.dataset.rating);
 
 		setIsOpen(!isOpen);
 		document.body.style.overflow = 'hidden';

@@ -20,25 +20,56 @@ const Card = ({ review, handleClick }) => {
 			className='latest-reviews__content__review '
 			data-customer={review?.fields.customerName}
 			data-review={review?.fields.customerComment}
+			data-rating={review?.fields.rating}
 			onClick={handleClick}
 			md={3}
 			lg={3}>
-			<Container fluid className='latest-reviews__content__review__img'>
+			<Container
+				data-customer={review?.fields.customerName}
+				data-review={review?.fields.customerComment}
+				data-rating={review?.fields.rating}
+				fluid
+				className='latest-reviews__content__review__img'>
 				<img
+					data-customer={review?.fields.customerName}
+					data-review={review?.fields.customerComment}
+					data-rating={review?.fields.rating}
 					src={`https:${review?.fields.customerAvatar?.fields.file.url}`}
 					alt={review?.fields.customerName}
 				/>
 			</Container>
-			<Container className='latest-reviews__content__review__stars'>
+			<Container
+				data-customer={review?.fields.customerName}
+				data-review={review?.fields.customerComment}
+				data-rating={review?.fields.rating}
+				className='latest-reviews__content__review__stars'>
 				<Container
 					fluid
+					data-customer={review?.fields.customerName}
+					data-review={review?.fields.customerComment}
+					data-rating={review?.fields.rating}
 					className='latest-reviews__content__review__stars__rating'>
 					{ratingStars.map((i) => i.item)}
 				</Container>
 			</Container>
-			<Container fluid className='latest-reviews__content__review__copy'>
-				<span>{review?.fields.customerName}</span>
-				<p>{review?.fields.customerComment.substring(0, 85)}...</p>
+			<Container
+				data-customer={review?.fields.customerName}
+				data-review={review?.fields.customerComment}
+				data-rating={review?.fields.rating}
+				fluid
+				className='latest-reviews__content__review__copy'>
+				<span
+					data-customer={review?.fields.customerName}
+					data-review={review?.fields.customerComment}
+					data-rating={review?.fields.rating}>
+					{review?.fields.customerName}
+				</span>
+				<p
+					data-customer={review?.fields.customerName}
+					data-review={review?.fields.customerComment}
+					data-rating={review?.fields.rating}>
+					{review?.fields.customerComment.substring(0, 85)}...
+				</p>
 			</Container>
 		</Container>
 	);

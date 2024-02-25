@@ -89,6 +89,10 @@
 	}
 
 	&__modal {
+		&.container-fluid {
+			padding-left: 0;
+			padding-right: 0;
+		}
 		background-color: rgba(0, 0, 0, 0.5);
 		visibility: hidden;
 		opacity: 0;
@@ -104,6 +108,11 @@
 		z-index: 4;
 
 		&__dialogue {
+			&.container-fluid {
+				padding-left: 0;
+				padding-right: 0;
+			}
+
 			position: absolute;
 			top: 50%;
 			left: 50%;
@@ -114,6 +123,11 @@
 			height: 475px;
 			border-radius: 25px;
 
+			@media (max-width: 575.5px) {
+				width: 95%;
+				transform: translate(-46.5%, -45%);
+			}
+
 			& .btn,
 			&__close-btn {
 				position: absolute;
@@ -123,6 +137,7 @@
 				border: none;
 				width: 1rem;
 				height: 1rem;
+				z-index: 1;
 
 				&:active {
 					background: transparent;
@@ -141,6 +156,10 @@
 				padding: 0;
 				margin: 0;
 
+				@media (max-width: 575.5px) {
+					display: none;
+				}
+
 				& img {
 					height: 100%;
 					// width: 100%;
@@ -155,6 +174,41 @@
 
 			&__copy {
 				padding: 1rem;
+
+				&__content {
+					position: relative;
+					padding: 1rem 1rem;
+					&__header {
+						padding: 1rem 0;
+						text-align: center;
+						& img {
+							width: 35px;
+						}
+					}
+
+					&__par {
+						padding: 1rem 0;
+						position: relative;
+						overflow-y: scroll;
+						background-color: white;
+						max-height: 335px;
+
+						& .mobile-image {
+							display: none;
+
+							& img {
+								border-radius: 15px;
+								margin: 0.25rem auto 1rem;
+							}
+							@media (max-width: 575.5px) {
+								display: block;
+							}
+						}
+						@media (max-width: 575.5px) {
+							max-height: 275px;
+						}
+					}
+				}
 			}
 		}
 

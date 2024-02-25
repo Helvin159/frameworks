@@ -15,7 +15,7 @@ const style = {
 const Hero = () => {
 	const navigate = useNavigate();
 
-	const handleNav = () => navigate('/products/product-collections');
+	const handleNav = () => navigate('/product-collections');
 	return (
 		<Container fluid className='hero' style={{ ...style }}>
 			<Container className='hero__banner'>

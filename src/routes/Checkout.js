@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react';
-import { Col } from 'react-bootstrap';
 import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import ExpressCheckout from '../components/ExpressCheckout';
 import CheckoutForm from '../components/CheckoutForm/CheckoutForm';
+import CheckoutCart from '../components/CheckoutCart/CheckoutCart';
 
 const Checkout = () => {
 	return (
@@ -13,7 +14,7 @@ const Checkout = () => {
 					<CheckoutForm />
 				</Col>
 				<Col xs={12} sm={12} md={6}>
-					<h4>Cart</h4>
+					<CheckoutCart />
 				</Col>
 			</Row>
 		</Fragment>

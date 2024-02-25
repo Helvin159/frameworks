@@ -1,12 +1,13 @@
 import React, { Fragment, useContext } from 'react';
-import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../../contexts/CartContext';
 import CartItem from './components/CartItem';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
 
 import timesIcon from '../../assets/svg/icon-times.svg';
-import { Col, Row } from 'react-bootstrap';
 
 const Cart = () => {
 	const { cart, isCartOpen, setIsCartOpen } = useContext(CartContext);
@@ -23,10 +24,13 @@ const Cart = () => {
 	const navigateHome = () => {
 		navigate('/');
 		setIsCartOpen(!isCartOpen);
+		document.body.style.overflow = 'auto';
 	};
 
 	const navigateCheckout = () => {
 		navigate('/checkout');
+		setIsCartOpen(!isCartOpen);
+		document.body.style.overflow = 'auto';
 	};
 
 	return (
@@ -57,6 +61,7 @@ const Cart = () => {
 								price={i.price}
 								currency={i.currency}
 								quantity={i.quantity}
+								id={i.id}
 								key={k}
 							/>
 						))}
@@ -66,12 +71,12 @@ const Cart = () => {
 					</Container>
 				</Fragment>
 			) : (
-				<Fragment>
+				<Container className='cart__empty-cart'>
 					<h3>Your cart is empty</h3>
 					<Container className='cart__continue-shopping'>
 						<Button onClick={navigateHome}>Continue shopping</Button>
 					</Container>
-				</Fragment>
+				</Container>
 			)}
 		</Container>
 	);

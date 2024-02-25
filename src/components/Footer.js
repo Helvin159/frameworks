@@ -12,7 +12,7 @@ const Footer = () => {
 					<h2>Our Store</h2>
 					<ul>
 						<li>
-							<Link to={'/products/product-collections'}>Shop Snap Frame</Link>
+							<Link to={'/product-collections'}>Shop FrameWorks</Link>
 						</li>
 						<li>
 							<Link to={'/track-order'}>Track Your Order</Link>

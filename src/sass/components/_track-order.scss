@@ -18,12 +18,15 @@
 			align-items: center;
 			padding: 3rem 0;
 
-			&__form {
-				text-align: center;
-
+			& form {
+				display: block;
 				& input {
 					padding: 1rem;
 					border-radius: 10px;
+				}
+
+				& label {
+					text-align: left !important;
 				}
 
 				& button,

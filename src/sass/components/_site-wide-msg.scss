@@ -1,15 +1,32 @@
 .site-wide-msg {
 	background-color: var(--main-bg-color);
 	color: white;
+	width: 100%;
+	margin: 4rem 0 0;
+
+	@media (max-width: 575.5px) {
+		margin: 2.5rem 0 0;
+	}
 
 	&__content {
 		max-width: 1250px;
 		margin: 0 auto;
 		text-align: center;
+		padding: 3rem 10.3rem;
+		width: 100%;
+
+		@media (max-width: 992px) {
+			padding: 3rem 7rem;
+		}
+		@media (max-width: 768px) {
+			padding: 3rem 5rem;
+		}
+
+		@media (max-width: 575.5px) {
+			padding: 3rem 1.5rem;
+		}
 
 		& p {
-			padding: 2rem;
-			width: 60%;
 			margin: 0 auto;
 			font-size: 2.5rem;
 			text-transform: capitalize;

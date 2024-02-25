@@ -1,4 +1,5 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useContext, useEffect, useState } from 'react';
+import { CartContext } from '../../../contexts/CartContext';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -6,22 +7,45 @@ import Button from 'react-bootstrap/Button';
 
 import trashCanIcon from '../../../assets/svg/icon-trash-can.svg';
 
-const CartItem = ({ name, img, price, currency, quantity }) => {
-	const [itemQuantity, setitemQuantity] = useState(quantity);
+const CartItem = ({ name, img, price, currency, quantity, id }) => {
+	const { cart, setCart } = useContext(CartContext);
+	const [itemQuantity, setItemQuantity] = useState(quantity);
 
-	const handleDelete = (e) => console.log(e.target);
+	const handleDelete = (e) => {
+		let newCart = [];
+
+		for (let i = 0; i < cart?.length; i++) {
+			const cartId = cart[i]?.id.toString();
+
+			const btnDataId = e.target?.dataset?.id;
+
+			if (cartId !== btnDataId) {
+				newCart.push(cart[i]);
+			}
+		}
+
+		if (cart.length <= 1) {
+			setCart(null);
+			return;
+		}
+
+		if (cart.length > 1) {
+			setCart(newCart);
+			return;
+		}
+	};
 
 	useEffect(() => {
-		setitemQuantity(quantity);
+		setItemQuantity(quantity);
 	}, [quantity]);
 
 	const incrementQuantity = (e) => {
 		e.preventDefault();
-		setitemQuantity(itemQuantity + 1);
+		setItemQuantity(parseInt(itemQuantity) + 1);
 	};
 	const decreaseQuantity = (e) => {
 		e.preventDefault();
-		setitemQuantity(itemQuantity > 1 ? itemQuantity - 1 : 1);
+		setItemQuantity(itemQuantity > 1 ? parseInt(itemQuantity) - 1 : 1);
 	};
 
 	return (
@@ -63,14 +87,17 @@ const CartItem = ({ name, img, price, currency, quantity }) => {
 				<Col sm={3} md={3}>
 					<h5>${parseInt(price) * parseInt(quantity)}</h5>
 					<p>{currency}</p>
-					<span onClick={handleDelete}>
+					<Button
+						onClick={handleDelete}
+						data-id={id}
+						style={{ display: 'inline-block' }}>
 						<img
 							width={'15px'}
 							height={'15px'}
 							src={trashCanIcon}
 							alt='Delete item'
 						/>
-					</span>
+					</Button>
 				</Col>
 			</Row>
 		</Fragment>

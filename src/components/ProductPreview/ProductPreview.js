@@ -92,12 +92,7 @@ const ProductPreview = ({ product }) => {
 						<p>
 							${Math.round(parseInt(selected, 10) * 100 + Number.EPSILON) / 100}{' '}
 							USD
-							<span>
-								$
-								{Math.round(
-									(selectedOriginal - selected + Number.EPSILON) * 100
-								) / 100}
-							</span>
+							<span>${Math.round(selectedOriginal)}</span>
 						</p>
 					</Container>
 					<Container fluid className='text-center py-3'>
@@ -123,7 +118,7 @@ const ProductPreview = ({ product }) => {
 								className='py-3 view-more-link'
 								onMouseEnter={handleShowArrow}
 								onMouseOut={handleShowArrow}
-								to={`products/product-collections/${product?.fields.slug}`}>
+								to={`/product-collections/${product?.fields.slug}`}>
 								View this product{' '}
 								<span className={`${showArrow ? 'show' : ''}`}>
 									<img src={rightArrowIcon} alt='Arrow' />
