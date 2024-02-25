@@ -25,6 +25,10 @@ const Cart = () => {
 		setIsCartOpen(!isCartOpen);
 	};
 
+	const navigateCheckout = () => {
+		navigate('/checkout');
+	};
+
 	return (
 		<Container fluid className={`cart ${isCartOpen ? 'show' : ''}`}>
 			<Row className='cart__header'>
@@ -58,7 +62,7 @@ const Cart = () => {
 						))}
 					</Container>
 					<Container className='cart__checkout-btn'>
-						<Button>Checkout</Button>
+						<Button onClick={navigateCheckout}>Checkout</Button>
 					</Container>
 				</Fragment>
 			) : (
