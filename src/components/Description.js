@@ -5,7 +5,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const Description = ({ reversed, img, heading, copy }) => {
-	console.log(copy);
 	return (
 		<Container as='section' className='description' fluid>
 			<Row className={`description__content ${reversed ? 'reverse' : ''}`}>

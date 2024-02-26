@@ -22,7 +22,6 @@ const Product = () => {
 			product = { ...products.items[i] };
 	}
 
-	console.log(productDescription);
 	if (!products) return <Loading />;
 	return (
 		<Fragment>
