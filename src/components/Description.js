@@ -1,9 +1,11 @@
 import React from 'react';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const Description = ({ reversed, img, heading, copy }) => {
+	console.log(copy);
 	return (
 		<Container as='section' className='description' fluid>
 			<Row className={`description__content ${reversed ? 'reverse' : ''}`}>
@@ -16,7 +18,9 @@ const Description = ({ reversed, img, heading, copy }) => {
 					md={6}
 					className='description__content__col text-center  py-4 px-3'>
 					<h3>{heading}</h3>
-					<p>{copy}</p>
+					<Container fluid className='px-5 pt-4'>
+						{documentToReactComponents(copy)}
+					</Container>
 				</Col>
 			</Row>
 		</Container>

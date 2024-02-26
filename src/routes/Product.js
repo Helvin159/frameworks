@@ -22,8 +22,8 @@ const Product = () => {
 			product = { ...products.items[i] };
 	}
 
+	console.log(productDescription);
 	if (!products) return <Loading />;
-
 	return (
 		<Fragment>
 			<ProductPreview product={product} />
@@ -33,7 +33,7 @@ const Product = () => {
 					reversed={k % 2 === 1 && true}
 					img={`https:${i.fields.featuredImage.fields.file.url}`}
 					heading={i.fields.title}
-					copy={i.copy}
+					copy={i.fields.copy}
 					key={k}
 				/>
 			))}
