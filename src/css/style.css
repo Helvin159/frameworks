@@ -87,6 +87,8 @@ button,
             margin-right: 0; }
     .header__content__logo {
       text-align: center; }
+      .header__content__logo img {
+        max-height: 94px; }
       @media (max-width: 768px) {
         .header__content__logo {
           width: 100%; } }
