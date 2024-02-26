@@ -1,13 +1,10 @@
-import React, { Fragment, useContext } from 'react';
+import React, { Fragment } from 'react';
 import Hero from '../components/Hero';
 import ProductPreview from '../components/ProductPreview/ProductPreview';
 import LatestReviews from '../components/LatestReviews';
-import { ProductContext } from '../contexts/ProductContext';
 import Loading from '../components/Loading';
 
-const Home = () => {
-	const { products } = useContext(ProductContext);
-
+const Home = ({ products }) => {
 	if (!products) return <Loading />;
 
 	return (

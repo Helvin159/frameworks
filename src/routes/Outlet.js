@@ -12,7 +12,6 @@ import Search from '../components/Search';
 
 const Outlet = () => {
 	const { isDeal, deal } = useContext(DealContext);
-
 	const { isSearchOpen } = useContext(SearchContext);
 
 	return (

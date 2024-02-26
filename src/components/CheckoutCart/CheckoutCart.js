@@ -1,15 +1,11 @@
-import React, { useContext } from 'react';
-import { CartContext } from '../../contexts/CartContext';
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import CheckoutCartCard from './components/CheckoutCartCard';
 import Total from './components/Total';
 
-const CheckoutCart = () => {
-	// eslint-disable-next-line
-	const { cart } = useContext(CartContext);
-
+const CheckoutCart = ({ cart }) => {
 	return (
 		<Container fluid>
 			<Row>

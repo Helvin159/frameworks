@@ -82,7 +82,7 @@ const Header = () => {
 						<ul>
 							<li
 								onClick={handleSearch}
-								className='header__content__cart__search-btn'>
+								className='header__content__cart__search-btn d-none'>
 								<img src={searchIcon} alt='Search Button' />
 							</li>
 							<li

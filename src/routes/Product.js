@@ -1,6 +1,5 @@
-import React, { Fragment, useContext } from 'react';
+import React, { Fragment } from 'react';
 import { useParams } from 'react-router-dom';
-import { ProductContext } from '../contexts/ProductContext';
 import ProductPreview from '../components/ProductPreview/ProductPreview';
 import SiteWideMsg from '../components/SiteWideMsg';
 import Description from '../components/Description';
@@ -8,11 +7,10 @@ import LatestReviewsNoCopy from '../components/LatestReviewsNoCopy';
 import AllReviews from '../components/AllReviews';
 import Loading from '../components/Loading';
 
-const Product = () => {
+const Product = ({ products, productDescription }) => {
 	const params = useParams();
-	const { products, productDescription } = useContext(ProductContext);
 
-	let product;
+	let product = null;
 
 	for (let i = 0; i < products?.items.length; i++) {
 		if (
@@ -23,6 +21,9 @@ const Product = () => {
 	}
 
 	if (!products) return <Loading />;
+
+	if (!product) return <Loading />;
+
 	return (
 		<Fragment>
 			<ProductPreview product={product} />
