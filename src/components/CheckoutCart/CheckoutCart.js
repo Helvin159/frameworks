@@ -14,7 +14,6 @@ const CheckoutCart = () => {
 		<Container fluid>
 			<Row>
 				{cart?.map((i, k) => {
-					console.log(i);
 					return (
 						<Col data-id={i.id}>
 							<CheckoutCartCard

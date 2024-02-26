@@ -29,7 +29,7 @@ const Footer = () => {
 					<h2>Policies</h2>
 					<ul>
 						{informationPages?.items.map((i, k) => (
-							<li>
+							<li key={k}>
 								<Link to={`/${i.fields.slug}`}>{i.fields.title}</Link>
 							</li>
 						))}

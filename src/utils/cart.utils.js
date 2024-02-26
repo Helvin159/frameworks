@@ -46,7 +46,6 @@ export const filter = (arr, query, nameSetter, idSetter, priceSetter) => {
 
 export const addKeyDownListener = ({ isSearchOpen, isSearchOpenSetter }) =>
 	document.addEventListener('keydown', (e) => {
-		console.log('run');
 		if (e.key === 'Escape') {
 			if (isSearchOpen === true) {
 				isSearchOpenSetter(!isSearchOpen);
@@ -65,6 +64,6 @@ export const getData = async (contentType, setter) => {
 	const res = await client.getEntries({
 		content_type: contentType,
 	});
-	console.log(res, 'review ctx');
+
 	setter(res);
 };
