@@ -1,0 +1,182 @@
+.product-preview {
+	padding: 2.3rem 0;
+	&__content {
+		max-width: 1250px;
+		margin: 0 auto;
+		padding: 0 2.3rem;
+		align-items: flex-start;
+
+		@media (max-width: 575.5px) {
+			padding: 0 2rem;
+		}
+
+		&__copy {
+			text-align: center;
+			padding: 0 3rem;
+
+			@media (max-width: 768px) {
+				padding-top: 2rem;
+			}
+
+			@media (max-width: 768px) {
+				padding: 2rem 0 0;
+			}
+			&__header {
+				text-align: left;
+
+				@media (max-width: 768px) {
+					text-align: center;
+				}
+
+				& p {
+					@include poppins-bold;
+					font-size: 1.3rem;
+					color: var(--main-bg-color);
+					& span {
+						text-decoration: line-through;
+						@include poppins-bold;
+						padding: 0 0.5rem;
+						letter-spacing: 3px;
+						font-size: 1.1rem;
+						color: #000000;
+					}
+				}
+			}
+
+			&__options {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: baseline;
+				position: relative;
+
+				& form {
+					display: flex;
+					flex-direction: column;
+					flex-wrap: nowrap;
+					align-items: center;
+					justify-content: center;
+					width: 100%;
+
+					& input {
+						width: 0;
+						opacity: 0;
+						height: 0;
+						cursor: pointer;
+						position: absolute;
+					}
+
+					& input:checked + label {
+						background: rgba(22, 45, 93, 0.1);
+						border: solid 2px rgb(22, 45, 93);
+					}
+
+					& input:checked + label:before {
+						border: solid 0.2rem rgb(255, 255, 255);
+						background: rgb(22, 45, 93);
+						box-shadow: 0 0 0 0.1rem rgb(22, 45, 93);
+					}
+
+					& label {
+						padding: 1rem 1.75rem 1rem 4rem;
+						margin-bottom: 0.85rem;
+						cursor: pointer;
+						border-radius: 1rem;
+						background: rgba(var(--accent-color), 0.02);
+						border: solid 2px rgba(22, 45, 93, 0.3);
+						position: relative;
+						text-align: left;
+
+						@media (max-width: 575.5px) {
+							width: 100%;
+						}
+
+						& h5,
+						h6,
+						p {
+							margin: 0;
+							padding: 0;
+						}
+
+						&:before {
+							content: '';
+							display: block;
+							width: 1.5rem;
+							height: 1.5rem;
+							position: absolute;
+							left: 2rem;
+							top: 50%;
+							transform: translate(-50%, -50%);
+							border-radius: 50%;
+							border: solid 0.2rem rgba(22, 45, 93, 0.3);
+						}
+					}
+				}
+
+				& .add-to-cart,
+				& .btn {
+					width: 100%;
+					margin: 0;
+					background-color: var(--main-bg-color);
+					border: 2px solid var(--main-bg-color);
+					font-size: 1.1rem;
+					text-transform: uppercase;
+					@include poppins-med;
+
+					&:focus,
+					&:active,
+					&:hover {
+						background-color: #fff;
+						color: var(--main-bg-color);
+						border: 2px solid var(--main-bg-color);
+					}
+
+					&:active {
+						box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+						transform: scale(0.99);
+					}
+				}
+
+				& .view-more-link {
+					font-size: 1.1rem;
+					color: var(--main-bg-color);
+					text-decoration: none;
+					@include poppins-med;
+
+					& span {
+						overflow: hidden;
+						& img {
+							visibility: hidden;
+							display: inline-block;
+							transform: translateX(-25px);
+							width: 0;
+							height: 35px;
+							color: var(--main-bg-color);
+						}
+
+						&.show {
+							& img {
+								animation: left-to-right 0.3s 1 normal ease-in;
+								animation-fill-mode: forwards;
+							}
+
+							@keyframes left-to-right {
+								0% {
+								}
+								20% {
+									visibility: visible;
+								}
+								to {
+									visibility: visible;
+									opacity: 1;
+									transform: translateX(0);
+									width: 30px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,166 @@
+.cart {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	padding: 0;
+	width: 30%;
+	box-sizing: border-box;
+	background-color: rgba(255, 255, 255, 0.85);
+	backdrop-filter: blur(5px);
+	z-index: 3;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+	text-align: center;
+	transform: translateX(100%);
+	transition: transform 0.3s ease-in-out;
+
+	@media (max-width: 575.5px) {
+		display: none;
+	}
+
+	&__header {
+		width: 100%;
+		margin: 0 auto;
+		padding: 1rem 0;
+		border-bottom: 1px solid var(--main-bg-color);
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		align-items: center;
+		box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.4);
+
+		&__heading {
+			padding: 0 1rem;
+			text-align: left;
+		}
+
+		&__close {
+			text-align: right;
+			padding: 0 1rem;
+
+			& button {
+				cursor: pointer;
+				border: none;
+				color: black;
+				&:active,
+				&:focus,
+				&:hover {
+					background-color: transparent;
+					outline: none;
+					border: none;
+				}
+			}
+		}
+	}
+
+	&__items {
+		margin: 0 auto;
+		padding: 1.5rem 0;
+		width: 90%;
+		border-bottom: 1px solid var(--main-bg-color);
+		overflow: scroll;
+
+		& .cart-btn,
+		& .btn {
+			background-color: transparent;
+			color: black;
+			outline: none;
+			border: none;
+			font-size: 1.5rem;
+
+			@include poppins-med;
+
+			&:active,
+			&:hover,
+			&:focus {
+				outline: none;
+				border: none;
+				background-color: transparent;
+			}
+		}
+	}
+
+	&.show {
+		display: flex;
+		flex-direction: column;
+		transform: translateX(0);
+	}
+
+	&__checkout-btn {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding: 1rem;
+		border-top: 1px solid var(--main-bg-color);
+
+		& button,
+		& .btn {
+			width: 100%;
+			background-color: var(--main-bg-color);
+			transition: transform 0.2s ease-in;
+			border: 2px solid var(--main-bg-color);
+			outline: 1px solid var(--main-bg-color);
+			text-transform: uppercase;
+
+			@include poppins-med;
+
+			&:active,
+			&:focus,
+			&:hover {
+				background-color: var(--main-bg-color);
+				border: 2px solid var(--main-bg-color);
+				outline: 1px solid var(--main-bg-color);
+			}
+
+			&:active {
+				transform: scale(0.99);
+				box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+			}
+
+			&:hover {
+				background-color: #fff;
+				color: var(--main-bg-color);
+			}
+		}
+	}
+
+	&__empty-cart {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		& h3 {
+			font-size: 2rem;
+		}
+
+		& button,
+		& .btn {
+			width: 80%;
+			background-color: var(--main-bg-color);
+			border: 2px solid var(--main-bg-color);
+			transform: 0.2s ease-in;
+			margin: 1rem auto;
+			@include poppins-med;
+
+			&:focus,
+			&:active,
+			&:hover {
+				background-color: var(--main-bg-color);
+				border: 2px solid var(--main-bg-color);
+			}
+
+			&:active {
+				box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+				transform: scale(0.99);
+			}
+
+			&:hover {
+				background-color: #fff;
+				color: var(--main-bg-color);
+			}
+		}
+	}
+}

@@ -1,18 +1,31 @@
-import React, { Fragment } from 'react';
-import { Outlet as Layout } from 'react-router';
+import React, { Fragment, useContext } from 'react';
+import { Outlet as Layout } from 'react-router-dom';
+
+import { DealContext } from '../contexts/DealContext';
+
+import DealNotification from '../components/DealNotification';
+import Cart from '../components/Cart/Cart';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import { SearchContext } from '../contexts/SearchContext';
+import Search from '../components/Search';
 
 const Outlet = () => {
+	const { isDeal, deal } = useContext(DealContext);
+
+	const { isSearchOpen } = useContext(SearchContext);
+
 	return (
 		<Fragment>
-			<header>
-				<h1>Header</h1>
-			</header>
+			{isDeal && <DealNotification deal={deal} />}
+			{isSearchOpen && <Search />}
+
+			<Cart />
+			<Header />
 			<main>
 				<Layout />
 			</main>
-			<footer>
-				<h1>Footer</h1>
-			</footer>
+			<Footer />
 		</Fragment>
 	);
 };
