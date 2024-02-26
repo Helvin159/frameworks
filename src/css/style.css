@@ -990,10 +990,12 @@ button,
 .track-order-form__content {
   max-width: 992px;
   margin: 0 auto 3rem;
-  padding: 2rem;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 25px;
   padding: 5rem; }
+  @media (max-width: 575.5px) {
+    .track-order-form__content {
+      padding: 5rem 1rem; } }
   .track-order-form__content__form-group {
     margin: 0 auto;
     text-align: center;
