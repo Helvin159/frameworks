@@ -918,13 +918,7 @@ button,
       flex-direction: row;
       flex-wrap: wrap; }
       .contact-form__form__group__row.row {
-        padding-left: 0;
-        padding-right: 0;
         justify-content: space-between;
-        margin: 0 auto; }
-      .contact-form__form__group__row.row* {
-        padding-left: 0;
-        padding-right: 0;
         margin: 0 auto; }
       .contact-form__form__group__row__input {
         padding: 0;
