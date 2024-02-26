@@ -88,7 +88,9 @@
 
 		&__logo {
 			text-align: center;
-
+			& img {
+				max-height: 94px;
+			}
 			@media (max-width: 768px) {
 				width: 100%;
 			}

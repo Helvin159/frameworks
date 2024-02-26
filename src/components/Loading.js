@@ -4,7 +4,9 @@ import Container from 'react-bootstrap/Container';
 const Loading = () => {
 	return (
 		<Container fluid className='loading'>
-			<h1>Loading</h1>
+			<Container className='loading__content'>
+				<h1>Loading</h1>
+			</Container>
 		</Container>
 	);
 };

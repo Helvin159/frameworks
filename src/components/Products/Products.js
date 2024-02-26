@@ -1,12 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import ProductCard from './components/ProductCard';
-import { ProductContext } from '../../contexts/ProductContext';
 
-const Products = () => {
-	const { products } = useContext(ProductContext);
-
+const Products = ({ products }) => {
 	return (
 		<Container fluid className='products'>
 			<Row className='products__content py-5'>

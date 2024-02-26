@@ -6,9 +6,11 @@
 		padding: 1rem;
 
 		&__col {
-			max-height: 667px;
+			max-height: 450px;
+
 			& img {
 				width: 100%;
+				max-height: 400px;
 				border-radius: 25px;
 				object-fit: cover;
 				object-position: center;

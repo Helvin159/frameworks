@@ -34,10 +34,21 @@ const ReviewModal = () => {
 		});
 	}
 
+	const handleKeyDown = (e) => {
+		if (e.keyCode.toString() === '27' || e.keyCode.toString() === '32')
+			setIsOpen(!isOpen);
+
+		!isOpen
+			? (document.body.style.overflow = 'hidden')
+			: (document.body.style.overflow = 'auto');
+	};
+
 	return (
 		<Container
 			fluid
-			className={`latest-reviews__modal ${isOpen ? 'show' : ''}`}>
+			className={`latest-reviews__modal ${isOpen ? 'show' : ''}`}
+			onKeyDown={handleKeyDown}
+			tabIndex={-1}>
 			<Row className='latest-reviews__modal__dialogue'>
 				<Button
 					onClick={handleClose}

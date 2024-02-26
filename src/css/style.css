@@ -87,6 +87,8 @@ button,
             margin-right: 0; }
     .header__content__logo {
       text-align: center; }
+      .header__content__logo img {
+        max-height: 94px; }
       @media (max-width: 768px) {
         .header__content__logo {
           width: 100%; } }
@@ -812,9 +814,10 @@ button,
   padding: 1rem;
   margin: 0 auto; }
   .description__content__col {
-    max-height: 667px; }
+    max-height: 450px; }
     .description__content__col img {
       width: 100%;
+      max-height: 400px;
       border-radius: 25px;
       object-fit: cover;
       object-position: center;
@@ -918,13 +921,7 @@ button,
       flex-direction: row;
       flex-wrap: wrap; }
       .contact-form__form__group__row.row {
-        padding-left: 0;
-        padding-right: 0;
         justify-content: space-between;
-        margin: 0 auto; }
-      .contact-form__form__group__row.row* {
-        padding-left: 0;
-        padding-right: 0;
         margin: 0 auto; }
       .contact-form__form__group__row__input {
         padding: 0;
@@ -990,10 +987,12 @@ button,
 .track-order-form__content {
   max-width: 992px;
   margin: 0 auto 3rem;
-  padding: 2rem;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 25px;
   padding: 5rem; }
+  @media (max-width: 575.5px) {
+    .track-order-form__content {
+      padding: 5rem 1rem; } }
   .track-order-form__content__form-group {
     margin: 0 auto;
     text-align: center;
@@ -1037,3 +1036,47 @@ button,
     padding: 2rem 2.5rem; }
     .products__content__card__content img {
       border-radius: 10px; }
+
+.information-page__content {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 3rem 4rem; }
+  .information-page__content.container {
+    padding: auto; }
+  .information-page__content h1,
+  .information-page__content h2,
+  .information-page__content h3,
+  .information-page__content h4,
+  .information-page__content h5,
+  .information-page__content h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 3rem;
+    max-width: 900px;
+    margin: 0 auto; }
+  .information-page__content p {
+    margin-bottom: 1.3rem;
+    line-height: 1.8rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    max-width: 900px;
+    margin: 0 auto 1.4rem; }
+
+.loading {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  backdrop-filter: blur(8px); }
+  .loading__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
