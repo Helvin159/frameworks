@@ -814,9 +814,10 @@ button,
   padding: 1rem;
   margin: 0 auto; }
   .description__content__col {
-    max-height: 667px; }
+    max-height: 450px; }
     .description__content__col img {
       width: 100%;
+      max-height: 400px;
       border-radius: 25px;
       object-fit: cover;
       object-position: center;
@@ -1035,3 +1036,30 @@ button,
     padding: 2rem 2.5rem; }
     .products__content__card__content img {
       border-radius: 10px; }
+
+.information-page__content {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 3rem 4rem; }
+  .information-page__content.container {
+    padding: auto; }
+  .information-page__content h1,
+  .information-page__content h2,
+  .information-page__content h3,
+  .information-page__content h4,
+  .information-page__content h5,
+  .information-page__content h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 3rem;
+    max-width: 900px;
+    margin: 0 auto; }
+  .information-page__content p {
+    margin-bottom: 1.3rem;
+    line-height: 1.8rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    max-width: 900px;
+    margin: 0 auto 1.4rem; }

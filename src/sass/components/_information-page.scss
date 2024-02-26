@@ -1,0 +1,31 @@
+.information-page {
+	&__content {
+		&.container {
+			padding: auto;
+		}
+
+		& h1,
+		& h2,
+		& h3,
+		& h4,
+		& h5,
+		& h6 {
+			@include poppins-bold;
+			line-height: 3rem;
+			max-width: 900px;
+			margin: 0 auto;
+		}
+
+		& p {
+			margin-bottom: 1.3rem;
+			line-height: 1.8rem;
+			@include poppins-med;
+			max-width: 900px;
+			margin: 0 auto 1.4rem;
+		}
+
+		max-width: 1250px;
+		margin: 0 auto;
+		padding: 3rem 4rem;
+	}
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Outlet from './routes/Outlet';
 import Home from './routes/Home';
@@ -14,8 +14,12 @@ import 'slick-carousel/slick/slick-theme.css';
 
 // Custom styles
 import './css/style.css';
+import { InformationPageContext } from './contexts/InformationPageContext';
+import InformationalPage from './routes/InformationalPage';
 
 const App = () => {
+	const { informationPages } = useContext(InformationPageContext);
+
 	return (
 		<Routes>
 			<Route path='/' element={<Outlet />}>
@@ -26,6 +30,18 @@ const App = () => {
 				<Route path='/cart' element={<Checkout />} />
 				<Route path='/product-collections' element={<ProductCollections />} />
 				<Route path='/product-collections/:slug' element={<Product />} />
+
+				{/* Information Pages */}
+				{informationPages &&
+					informationPages?.items.map((i) => {
+						return (
+							<Route
+								path={`/${i.fields.slug}`}
+								element={<InformationalPage content={i.fields.pageContent} />}
+								key={i?.sys.id}
+							/>
+						);
+					})}
 			</Route>
 		</Routes>
 	);
